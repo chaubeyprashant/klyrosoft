@@ -9,16 +9,27 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "max-age=31536000"
+    Content-Type = "application/javascript; charset=utf-8"
 
 [[headers]]
   for = "*.js"
   [headers.values]
-    Content-Type = "application/javascript"
+    Content-Type = "text/javascript; charset=utf-8"
 
 [[headers]]
   for = "*.mjs"
   [headers.values]
-    Content-Type = "application/javascript"
+    Content-Type = "text/javascript; charset=utf-8"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "text/javascript; charset=utf-8"
+
+[[headers]]
+  for = "/assets/*.js"
+  [headers.values]
+    Content-Type = "text/javascript; charset=utf-8"
 
 [[redirects]]
   from = "/*"
