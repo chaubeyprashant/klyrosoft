@@ -5,6 +5,20 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Custom domain configuration
+[context.production]
+  command = "npm run build"
+  publish = "dist"
+
+# Force HTTPS and proper headers for custom domain
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
 # Cache static assets
 [[headers]]
   for = "/assets/*"
@@ -22,6 +36,25 @@
   for = "*.js"
   [headers.values]
     Content-Type = "text/javascript; charset=utf-8"
+
+# Force HTTPS redirect
+[[redirects]]
+  from = "http://klyrosoft.com/*"
+  to = "https://klyrosoft.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.klyrosoft.com/*"
+  to = "https://klyrosoft.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.klyrosoft.com/*"
+  to = "https://klyrosoft.com/:splat"
+  status = 301
+  force = true
 
 # SPA fallback - redirect all routes to index.html
 [[redirects]]
