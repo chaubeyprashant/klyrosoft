@@ -1,18 +1,18 @@
 [build]
-  command = "npm ci && npm run build"
+  command = "npm ci --include=dev && npm run build"
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
 
 # Custom domain configuration
 [context.production]
-  command = "npm ci && npm run build"
+  command = "npm ci --include=dev && npm run build"
   publish = "dist"
 
 # Specific configuration for custom domain
 [context.production.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
   NODE_ENV = "production"
 
 # Force HTTPS and proper headers for custom domain
