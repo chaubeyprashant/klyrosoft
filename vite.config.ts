@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/",
+  base: mode === "production" ? "/" : "/",
   server: {
     host: "::",
     port: 8080,
@@ -20,6 +20,7 @@ export default defineConfig(({ mode }) => ({
     outDir: "dist",
     assetsDir: "assets",
     cssCodeSplit: true,
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: undefined,
@@ -31,6 +32,8 @@ export default defineConfig(({ mode }) => ({
           }
           return `assets/[name]-[hash][extname]`;
         },
+        chunkFileNames: "assets/[name]-[hash].js",
+        entryFileNames: "assets/[name]-[hash].js",
       },
     },
   },
