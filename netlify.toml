@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "npm ci && npm run build"
   publish = "dist"
 
 [build.environment]
@@ -7,7 +7,7 @@
 
 # Custom domain configuration
 [context.production]
-  command = "npm run build"
+  command = "npm ci && npm run build"
   publish = "dist"
 
 # Specific configuration for custom domain
