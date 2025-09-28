@@ -2,16 +2,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { 
   Code, 
-  Palette, 
-  TrendingUp, 
-  Server, 
   Smartphone, 
-  Shield, 
-  Brush, 
-  Layout, 
-  Camera, 
+  Server, 
   BarChart, 
   Megaphone, 
+  Camera, 
+  Globe, 
+  Cloud, 
+  Database, 
+  Zap, 
+  Palette, 
   Target 
 } from "lucide-react";
 
@@ -19,32 +19,62 @@ const Services = () => {
   const services = [
     {
       icon: <Code className="w-12 h-12 text-primary" />,
-      title: "IT Solutions",
-      description: "Comprehensive technology services to modernize your business infrastructure",
+      title: "Web Development",
+      description: "Responsive websites tailored for businesses with scalable backend architecture",
       features: [
-        { icon: <Server className="w-5 h-5" />, text: "Cloud Infrastructure" },
-        { icon: <Smartphone className="w-5 h-5" />, text: "Mobile Development" },
-        { icon: <Shield className="w-5 h-5" />, text: "Cybersecurity" }
+        { icon: <Globe className="w-5 h-5" />, text: "Responsive websites" },
+        { icon: <Database className="w-5 h-5" />, text: "E-commerce platforms" },
+        { icon: <Zap className="w-5 h-5" />, text: "CMS solutions" }
       ]
     },
     {
-      icon: <Palette className="w-12 h-12 text-primary" />,
-      title: "Design Services",
-      description: "Creative solutions that captivate audiences and enhance user experiences",
+      icon: <Smartphone className="w-12 h-12 text-primary" />,
+      title: "Mobile Development",
+      description: "iOS & Android app development with cross-platform solutions",
       features: [
-        { icon: <Brush className="w-5 h-5" />, text: "Brand Identity" },
-        { icon: <Layout className="w-5 h-5" />, text: "UI/UX Design" },
-        { icon: <Camera className="w-5 h-5" />, text: "Visual Content" }
+        { icon: <Smartphone className="w-5 h-5" />, text: "iOS & Android apps" },
+        { icon: <Code className="w-5 h-5" />, text: "Cross-platform apps" },
+        { icon: <Target className="w-5 h-5" />, text: "Mobile-first design" }
       ]
     },
     {
-      icon: <TrendingUp className="w-12 h-12 text-primary" />,
-      title: "Marketing Strategy",
-      description: "Data-driven marketing campaigns that deliver measurable results",
+      icon: <Server className="w-12 h-12 text-primary" />,
+      title: "Backend & DevOps",
+      description: "API development, cloud hosting, and CI/CD pipelines for scaling",
       features: [
-        { icon: <BarChart className="w-5 h-5" />, text: "Analytics & SEO" },
-        { icon: <Megaphone className="w-5 h-5" />, text: "Social Media" },
-        { icon: <Target className="w-5 h-5" />, text: "PPC Campaigns" }
+        { icon: <Cloud className="w-5 h-5" />, text: "Cloud hosting (AWS, GCP, Azure)" },
+        { icon: <Zap className="w-5 h-5" />, text: "CI/CD pipelines" },
+        { icon: <Database className="w-5 h-5" />, text: "API development" }
+      ]
+    },
+    {
+      icon: <BarChart className="w-12 h-12 text-primary" />,
+      title: "Dashboards & SaaS",
+      description: "Custom analytics dashboards and SaaS product development",
+      features: [
+        { icon: <BarChart className="w-5 h-5" />, text: "Analytics dashboards" },
+        { icon: <Cloud className="w-5 h-5" />, text: "SaaS development" },
+        { icon: <Zap className="w-5 h-5" />, text: "Payment integration" }
+      ]
+    },
+    {
+      icon: <Megaphone className="w-12 h-12 text-primary" />,
+      title: "Social Media & Branding",
+      description: "Content strategy, creative designs, and social media management",
+      features: [
+        { icon: <Megaphone className="w-5 h-5" />, text: "Content strategy" },
+        { icon: <Palette className="w-5 h-5" />, text: "Brand identity" },
+        { icon: <Target className="w-5 h-5" />, text: "Social media management" }
+      ]
+    },
+    {
+      icon: <Camera className="w-12 h-12 text-primary" />,
+      title: "Photography & Media",
+      description: "Corporate photography, event coverage, and visual storytelling",
+      features: [
+        { icon: <Camera className="w-5 h-5" />, text: "Corporate photography" },
+        { icon: <Globe className="w-5 h-5" />, text: "Event coverage" },
+        { icon: <Palette className="w-5 h-5" />, text: "Visual storytelling" }
       ]
     }
   ];
@@ -68,7 +98,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
             <Card 
               key={index} 

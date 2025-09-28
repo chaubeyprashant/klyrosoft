@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, Trophy, Clock, Globe } from "lucide-react";
+import { Users, Trophy, Clock, Globe, Lightbulb, Shield, Eye, Palette } from "lucide-react";
 
 const About = () => {
   const stats = [
@@ -10,9 +10,11 @@ const About = () => {
     { icon: <Globe className="w-8 h-8" />, number: "25+", label: "Countries Served" }
   ];
 
-  const expertise = [
-    "React & Next.js", "Node.js & Python", "AWS & Azure", "UI/UX Design", 
-    "Brand Strategy", "SEO & Analytics", "Mobile Apps", "E-commerce"
+  const values = [
+    { icon: <Lightbulb className="w-6 h-6" />, title: "Innovation", description: "Pushing boundaries with cutting-edge technology" },
+    { icon: <Shield className="w-6 h-6" />, title: "Reliability", description: "Consistent delivery and dependable solutions" },
+    { icon: <Eye className="w-6 h-6" />, title: "Transparency", description: "Clear communication throughout every project" },
+    { icon: <Palette className="w-6 h-6" />, title: "Creativity", description: "Unique solutions that stand out from the crowd" }
   ];
 
   return (
@@ -21,30 +23,32 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              About <span className="bg-gradient-primary bg-clip-text text-transparent">TechFlow</span>
+              About <span className="bg-gradient-primary bg-clip-text text-transparent">Us</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We are a dynamic team of technology enthusiasts, creative designers, and marketing strategists 
-              dedicated to transforming businesses through innovative digital solutions. Our mission is to 
-              bridge the gap between technology and business success.
-            </p>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              With years of experience across diverse industries, we understand that every business is unique. 
-              That's why we tailor our approach to meet your specific needs, ensuring maximum impact and 
-              sustainable growth.
+              We are a team of developers, designers, and creative professionals passionate about delivering 
+              end-to-end digital solutions. Whether you need a powerful web app, a mobile product, a SaaS 
+              platform, or branding support, we combine technology and creativity to help your business thrive.
             </p>
             
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-foreground">Our Expertise</h3>
-              <div className="flex flex-wrap gap-2">
-                {expertise.map((skill, index) => (
-                  <Badge 
-                    key={index} 
-                    variant="secondary" 
-                    className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
-                  >
-                    {skill}
-                  </Badge>
+              <h3 className="text-xl font-semibold mb-4 text-foreground">Our Mission</h3>
+              <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+                "To empower businesses with innovative tech and creative solutions that drive growth."
+              </p>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4 text-foreground">Our Values</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {values.map((value, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="text-primary mt-1">{value.icon}</div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">{value.title}</h4>
+                      <p className="text-sm text-muted-foreground">{value.description}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
