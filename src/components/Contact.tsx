@@ -4,27 +4,83 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Loader2 } from "lucide-react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     service: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your interest. We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", service: "", message: "" });
+  // Validate environment variables
+  const validateEmailJSConfig = () => {
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error('Missing EmailJS environment variables:', {
+        serviceId: serviceId ? 'Set' : 'Missing',
+        templateId: templateId ? 'Set' : 'Missing',
+        publicKey: publicKey ? 'Set' : 'Missing'
+      });
+      return false;
+    }
+    return true;
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+  
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone || "Not provided",
+          service: formData.service || "Not specified",
+          message: formData.message,
+          timestamp: new Date().toLocaleString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          })
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
+      );
+  
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your interest. We'll get back to you within 24 hours.",
+      });
+  
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Rest of your component remains the same...
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
@@ -32,26 +88,33 @@ const Contact = () => {
     }));
   };
 
+  const handleSelectChange = (value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      service: value
+    }));
+  };
+
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["hello@techflow.com", "support@techflow.com"]
+      details: ["klyrosoft1@gmail.com"]
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"]
+      details: ["+91-7869861631"]
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Office",
-      details: ["123 Innovation Drive", "San Francisco, CA 94105"]
+      details: ["4795 Regent Blvd, Irving, TX 75063, USA"]
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Hours",
-      details: ["Mon - Fri: 9AM - 6PM", "Sat: 10AM - 4PM"]
+      details: ["Mon - Fri: 9AM - 6PM"]
     }
   ];
 
@@ -60,7 +123,7 @@ const Contact = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Get in <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
+            Let's Build Something <span className="bg-gradient-primary bg-clip-text text-transparent">Great Together</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Ready to transform your business? Let's discuss how we can help you achieve your goals.
@@ -80,7 +143,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
+                    <Label htmlFor="name">Name</Label>
                     <Input
                       id="name"
                       name="name"
@@ -91,7 +154,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
+                    <Label htmlFor="email">Email</Label>
                     <Input
                       id="email"
                       name="email"
@@ -104,15 +167,32 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="service">Service Interest</Label>
+                  <Label htmlFor="phone">Phone (optional)</Label>
                   <Input
-                    id="service"
-                    name="service"
-                    placeholder="IT Services, Design, Marketing, or Custom Solution"
-                    value={formData.service}
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
                     onChange={handleInputChange}
                     className="border-border focus:border-primary"
                   />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="service">Service of Interest</Label>
+                  <Select value={formData.service} onValueChange={handleSelectChange}>
+                    <SelectTrigger className="border-border focus:border-primary">
+                      <SelectValue placeholder="Select a service" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="web">Web Development</SelectItem>
+                      <SelectItem value="mobile">Mobile Development</SelectItem>
+                      <SelectItem value="saas">SaaS Development</SelectItem>
+                      <SelectItem value="branding">Branding & Design</SelectItem>
+                      <SelectItem value="social">Social Media</SelectItem>
+                      <SelectItem value="photography">Photography</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Project Details</Label>
@@ -129,9 +209,17 @@ const Contact = () => {
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-primary hover:shadow-elegant transition-all duration-300 text-lg py-3"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-primary hover:shadow-elegant transition-all duration-300 text-lg py-3 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    "Get Started"
+                  )}
                 </Button>
               </form>
             </CardContent>

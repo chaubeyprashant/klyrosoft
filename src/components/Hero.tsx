@@ -24,32 +24,31 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 text-center text-white">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Transform Your Business with{" "}
+            Transforming Ideas into{" "}
             <span className="bg-gradient-to-r from-white to-secondary bg-clip-text text-transparent">
-              Digital Excellence
+              Scalable Digital Solutions
             </span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
-            We deliver cutting-edge IT solutions, stunning design, and powerful marketing strategies 
-            to elevate your brand and drive success.
+            We specialize in web development, mobile apps, SaaS platforms, DevOps, and creative digital services to help your business grow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
-              onClick={() => scrollToSection("services")}
+              onClick={() => scrollToSection("contact")}
               size="lg" 
               className="bg-white text-primary hover:bg-white/90 hover:shadow-hover transition-all duration-300 text-lg px-8 py-4"
             >
-              Explore Services
+              Get a Free Consultation
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button 
-              onClick={() => scrollToSection("portfolio")}
+              onClick={() => scrollToSection("services")}
               variant="outline" 
               size="lg"
               className="border-white text-white hover:bg-white hover:text-primary transition-all duration-300 text-lg px-8 py-4"
             >
               <Play className="mr-2 w-5 h-5" />
-              View Our Work
+              Explore Our Services
             </Button>
           </div>
         </div>
