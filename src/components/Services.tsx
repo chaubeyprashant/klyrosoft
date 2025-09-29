@@ -87,16 +87,16 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-muted/30">
+    <section id="services" className="py-20 bg-muted/30" role="region" aria-labelledby="services-heading">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        <header className="text-center mb-16">
+          <h2 id="services-heading" className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From concept to execution, we provide end-to-end solutions that drive growth and innovation
+            From concept to execution, we provide end-to-end IT solutions, web development, mobile apps, and digital marketing services that drive growth and innovation for businesses worldwide.
           </p>
-        </div>
+        </header>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
