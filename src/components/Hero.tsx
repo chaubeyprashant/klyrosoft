@@ -11,11 +11,14 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" role="banner" aria-label="Hero section">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
+        role="img"
+        aria-label="Modern technology workspace with developers working on digital solutions"
+        title="KlyroSoft Technology Workspace"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-secondary/80" />
       </div>
@@ -30,7 +33,8 @@ const Hero = () => {
             </span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
-            We specialize in web development, mobile apps, SaaS platforms, DevOps, and creative digital services to help your business grow.
+            Expert IT services, web development, mobile apps, SaaS platforms, DevOps, and digital marketing solutions. 
+            Trusted by 500+ businesses worldwide with 150+ successful projects completed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 

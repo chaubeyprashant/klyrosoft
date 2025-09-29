@@ -69,16 +69,16 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="py-20 bg-background">
+    <section id="portfolio" className="py-20 bg-background" role="region" aria-labelledby="portfolio-heading">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        <header className="text-center mb-16">
+          <h2 id="portfolio-heading" className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">Portfolio</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover how we've helped businesses achieve their goals through innovative solutions
+            Discover how KlyroSoft has helped 500+ businesses achieve their digital transformation goals through innovative IT solutions, web development, mobile apps, and digital marketing strategies.
           </p>
-        </div>
+        </header>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {projects.map((project, index) => (

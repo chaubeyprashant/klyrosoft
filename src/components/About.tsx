@@ -18,17 +18,17 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-20 bg-background" role="region" aria-labelledby="about-heading">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            <h2 id="about-heading" className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
               About <span className="bg-gradient-primary bg-clip-text text-transparent">Us</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We are a team of developers, designers, and creative professionals passionate about delivering 
-              end-to-end digital solutions. Whether you need a powerful web app, a mobile product, a SaaS 
-              platform, or branding support, we combine technology and creativity to help your business thrive.
+              KlyroSoft is a leading IT services company with a team of expert developers, designers, and creative professionals passionate about delivering 
+              end-to-end digital solutions. Whether you need a powerful web application, mobile product, SaaS 
+              platform, or comprehensive branding support, we combine cutting-edge technology and creativity to help your business thrive in the digital landscape.
             </p>
             
             <div className="mb-8">
