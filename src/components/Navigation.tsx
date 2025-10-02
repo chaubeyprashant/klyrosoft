@@ -1,23 +1,43 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Code, Palette, TrendingUp } from "lucide-react";
+import { Menu, X, Code, Calculator } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
+    // If we're not on the home page, navigate there first
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
+    setIsMenuOpen(false);
+  };
+
+  const navigateToEstimate = () => {
+    navigate("/estimate");
+    setIsMenuOpen(false);
   };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 cursor-pointer" onClick={() => navigate("/")}>
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
               <Code className="w-5 h-5 text-primary-foreground" />
             </div>
@@ -50,11 +70,18 @@ const Navigation = () => {
             >
               Contact
             </button>
+            <button
+              onClick={navigateToEstimate}
+              className="text-foreground hover:text-primary transition-colors flex items-center gap-1"
+            >
+              <Calculator className="w-4 h-4" />
+              Estimate
+            </button>
             <Button 
-              onClick={() => scrollToSection("contact")}
+              onClick={navigateToEstimate}
               className="bg-gradient-primary hover:shadow-elegant transition-all duration-300"
             >
-              Get Started
+              Get Estimate
             </Button>
           </div>
 
@@ -94,11 +121,18 @@ const Navigation = () => {
             >
               Contact
             </button>
+            <button
+              onClick={navigateToEstimate}
+              className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors flex items-center gap-2"
+            >
+              <Calculator className="w-4 h-4" />
+              Get Estimate
+            </button>
             <Button 
-              onClick={() => scrollToSection("contact")}
+              onClick={navigateToEstimate}
               className="w-full bg-gradient-primary hover:shadow-elegant transition-all duration-300"
             >
-              Get Started
+              Get Estimate
             </Button>
           </div>
         )}

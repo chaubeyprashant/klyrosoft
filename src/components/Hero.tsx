@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Calculator } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -38,12 +41,21 @@ const Hero = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
-              onClick={() => scrollToSection("contact")}
+              onClick={() => navigate("/estimate")}
               size="lg" 
               className="bg-white text-primary hover:bg-white/90 hover:shadow-hover transition-all duration-300 text-lg px-8 py-4"
             >
-              Get a Free Consultation
+              <Calculator className="mr-2 w-5 h-5" />
+              Get Project Estimate
               <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button 
+              onClick={() => scrollToSection("contact")}
+              variant="outline" 
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-primary transition-all duration-300 text-lg px-8 py-4"
+            >
+              Free Consultation
             </Button>
             <Button 
               onClick={() => scrollToSection("services")}
@@ -52,7 +64,7 @@ const Hero = () => {
               className="border-white text-white hover:bg-white hover:text-primary transition-all duration-300 text-lg px-8 py-4"
             >
               <Play className="mr-2 w-5 h-5" />
-              Explore Our Services
+              Our Services
             </Button>
           </div>
         </div>
