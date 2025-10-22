@@ -33,6 +33,11 @@ const Navigation = () => {
     setIsMenuOpen(false);
   };
 
+  const navigateToCareers = () => {
+    navigate("/careers");
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4">
@@ -65,17 +70,22 @@ const Navigation = () => {
               Portfolio
             </button>
             <button
+              onClick={() => scrollToSection("products")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Products
+            </button>
+            <button
               onClick={() => scrollToSection("contact")}
               className="text-foreground hover:text-primary transition-colors"
             >
               Contact
             </button>
             <button
-              onClick={navigateToEstimate}
-              className="text-foreground hover:text-primary transition-colors flex items-center gap-1"
+              onClick={navigateToCareers}
+              className="text-foreground hover:text-primary transition-colors"
             >
-              <Calculator className="w-4 h-4" />
-              Estimate
+              Careers
             </button>
             <Button 
               onClick={navigateToEstimate}
@@ -116,10 +126,22 @@ const Navigation = () => {
               Portfolio
             </button>
             <button
+              onClick={() => scrollToSection("products")}
+              className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+            >
+              Products
+            </button>
+            <button
               onClick={() => scrollToSection("contact")}
               className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
             >
               Contact
+            </button>
+            <button
+              onClick={navigateToCareers}
+              className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+            >
+              Careers
             </button>
             <button
               onClick={navigateToEstimate}
