@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -24,11 +25,13 @@ const isConfigValid = Object.values(firebaseConfig).every(value =>
 // Initialize Firebase only if config is valid
 let app: any = null;
 let db: any = null;
+let storage: any = null;
 
 if (isConfigValid) {
   try {
     app = initializeApp(firebaseConfig);
     db = getFirestore(app);
+    storage = getStorage(app);
     console.log('Firebase initialized successfully');
   } catch (error) {
     console.error('Failed to initialize Firebase:', error);
@@ -48,6 +51,6 @@ if (isConfigValid) {
 }
 
 // Export Firebase instances
-export { db };
+export { db, storage };
 
 export default app;
