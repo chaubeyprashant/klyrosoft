@@ -39,6 +39,64 @@ export interface EstimateResult {
 }
 
 export const projectFeatures: ProjectFeature[] = [
+  // AI Features
+  {
+    id: "ai-voice-assistant",
+    name: "AI Voice Assistant",
+    description: "Natural language voice assistant with speech recognition",
+    baseHours: 60,
+    complexity: { simple: 1.2, medium: 1.5, complex: 2 }
+  },
+  {
+    id: "ai-image-generation",
+    name: "AI Image Generation",
+    description: "Text-to-image generation using AI models",
+    baseHours: 45,
+    complexity: { simple: 1.1, medium: 1.4, complex: 1.8 }
+  },
+  {
+    id: "ai-video-generation",
+    name: "AI Video Generation",
+    description: "Automated video creation from scripts and templates",
+    baseHours: 70,
+    complexity: { simple: 1.3, medium: 1.6, complex: 2.2 }
+  },
+  {
+    id: "ai-chatbot",
+    name: "AI Chatbot",
+    description: "Intelligent conversational AI for customer support",
+    baseHours: 40,
+    complexity: { simple: 1.1, medium: 1.4, complex: 1.9 }
+  },
+  {
+    id: "ai-workflow-automation",
+    name: "AI Workflow Automation",
+    description: "Intelligent process automation with AI agents",
+    baseHours: 80,
+    complexity: { simple: 1.2, medium: 1.6, complex: 2.3 }
+  },
+  {
+    id: "ai-content-generation",
+    name: "AI Content Generation",
+    description: "Automated content creation for blogs, social media, etc.",
+    baseHours: 35,
+    complexity: { simple: 1, medium: 1.3, complex: 1.7 }
+  },
+  {
+    id: "ai-data-analysis",
+    name: "AI Data Analysis",
+    description: "Machine learning models for predictive analytics",
+    baseHours: 65,
+    complexity: { simple: 1.2, medium: 1.5, complex: 2.1 }
+  },
+  {
+    id: "ai-document-processing",
+    name: "AI Document Processing",
+    description: "OCR and intelligent document extraction",
+    baseHours: 50,
+    complexity: { simple: 1.1, medium: 1.4, complex: 1.8 }
+  },
+  // Standard Features
   {
     id: "responsive-design",
     name: "Responsive Design",
@@ -113,11 +171,20 @@ export const projectFeatures: ProjectFeature[] = [
 
 export const calculateProjectEstimate = (request: EstimateRequest): EstimateResult => {
   const baseHours = {
-    "website": 25,        // Reduced from 40
-    "web-app": 50,        // Reduced from 80
-    "mobile-app": 80,     // Reduced from 120
-    "e-commerce": 65,     // Reduced from 100
-    "custom-software": 100 // Reduced from 150
+    "website": 25,
+    "web-app": 50,
+    "mobile-app": 80,
+    "e-commerce": 65,
+    "custom-software": 100,
+    "ai-voice-assistant": 100,
+    "ai-image-generation": 80,
+    "ai-video-generation": 120,
+    "ai-chatbot": 70,
+    "ai-workflow-automation": 150,
+    "ai-content-generation": 60,
+    "ai-data-analysis": 110,
+    "ai-document-processing": 90,
+    "ai-agent": 100
   };
 
   const complexityMultipliers = {

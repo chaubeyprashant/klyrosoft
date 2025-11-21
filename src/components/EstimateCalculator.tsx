@@ -8,7 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Calculator, Clock, DollarSign, CheckCircle, AlertCircle, User, Mail, Phone, Building } from "lucide-react";
+import { Calculator, Clock, DollarSign, CheckCircle, AlertCircle, User, Mail, Phone, Building, Bot, Sparkles, Workflow } from "lucide-react";
+import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import { 
   projectFeatures, 
@@ -132,19 +133,99 @@ const EstimateCalculator = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 py-20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-primary rounded-full mb-6">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div 
+            className="inline-flex items-center justify-center w-16 h-16 bg-gradient-primary rounded-full mb-6"
+            whileHover={{ scale: 1.1, rotate: 360 }}
+            transition={{ duration: 0.6 }}
+          >
             <Calculator className="w-8 h-8 text-primary-foreground" />
-          </div>
+          </motion.div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Project Estimate Calculator
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
             Get an instant estimate for your project. Tell us about your requirements and we'll provide you with a detailed cost and timeline estimate.
           </p>
-        </div>
+          
+          {/* AI Projects Info Section */}
+          <motion.div 
+            className="max-w-4xl mx-auto mt-8 p-6 bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/5 rounded-xl border border-primary/20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="flex items-center gap-2 mb-4 justify-center">
+              <Sparkles className="w-5 h-5 text-primary" />
+              <h3 className="text-lg font-semibold text-foreground">Specializing in AI Solutions</h3>
+            </div>
+            <p className="text-sm text-muted-foreground mb-4 max-w-2xl mx-auto">
+              We specialize in building AI agents and intelligent workflows. Check out our AI project examples below:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+              {[
+                { icon: Bot, title: "AI Voice Assistant", desc: "24/7 customer support automation" },
+                { icon: Sparkles, title: "AI Image/Video Gen", desc: "Automated content creation" },
+                { icon: Workflow, title: "AI Workflows", desc: "Intelligent process automation" }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  className="p-4 bg-background/50 rounded-lg border border-primary/10"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <item.icon className="w-6 h-6 text-primary mx-auto mb-2" />
+                  <h4 className="font-semibold text-sm mb-1">{item.title}</h4>
+                  <p className="text-xs text-muted-foreground">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
 
         <div className="max-w-4xl mx-auto">
+          {/* AI Projects Showcase */}
+          <motion.div 
+            className="mb-8 p-6 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5 rounded-xl border border-primary/20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <Bot className="w-5 h-5 text-primary" />
+              <h3 className="text-lg font-semibold">Recent AI Projects</h3>
+            </div>
+            <p className="text-sm text-muted-foreground mb-4">
+              Here are some examples of AI projects we've delivered:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { title: "AI Voice Assistant", result: "60% cost reduction", icon: "🤖" },
+                { title: "AI Image Generation", result: "1000+ images/day", icon: "🎨" },
+                { title: "AI Video Creation", result: "90% time reduction", icon: "🎬" },
+                { title: "AI Workflow Automation", result: "500+ tasks automated", icon: "⚡" }
+              ].map((project, idx) => (
+                <motion.div
+                  key={idx}
+                  className="p-4 bg-background rounded-lg border border-primary/10 flex items-center gap-3"
+                  whileHover={{ scale: 1.02, x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <span className="text-2xl">{project.icon}</span>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-sm">{project.title}</h4>
+                    <p className="text-xs text-muted-foreground">{project.result}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
           <Card className="shadow-elegant">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -166,11 +247,20 @@ const EstimateCalculator = () => {
                     <SelectValue placeholder="Select your project type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="website">Business Website</SelectItem>
-                    <SelectItem value="web-app">Web Application</SelectItem>
-                    <SelectItem value="mobile-app">Mobile App</SelectItem>
-                    <SelectItem value="e-commerce">E-commerce Store</SelectItem>
-                    <SelectItem value="custom-software">Custom Software</SelectItem>
+                    <SelectItem value="ai-voice-assistant">🤖 AI Voice Assistant</SelectItem>
+                    <SelectItem value="ai-image-generation">🎨 AI Image Generation</SelectItem>
+                    <SelectItem value="ai-video-generation">🎬 AI Video Generation</SelectItem>
+                    <SelectItem value="ai-chatbot">💬 AI Chatbot</SelectItem>
+                    <SelectItem value="ai-workflow-automation">⚡ AI Workflow Automation</SelectItem>
+                    <SelectItem value="ai-content-generation">✍️ AI Content Generation</SelectItem>
+                    <SelectItem value="ai-data-analysis">📊 AI Data Analysis</SelectItem>
+                    <SelectItem value="ai-document-processing">📄 AI Document Processing</SelectItem>
+                    <SelectItem value="ai-agent">🤖 Custom AI Agent</SelectItem>
+                    <SelectItem value="website">🌐 Business Website</SelectItem>
+                    <SelectItem value="web-app">💻 Web Application</SelectItem>
+                    <SelectItem value="mobile-app">📱 Mobile App</SelectItem>
+                    <SelectItem value="e-commerce">🛒 E-commerce Store</SelectItem>
+                    <SelectItem value="custom-software">⚙️ Custom Software</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

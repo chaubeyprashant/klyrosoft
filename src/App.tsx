@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import EstimatePage from "./pages/EstimatePage";
 import CareerPage from "./pages/CareerPage";
 import NotFound from "./pages/NotFound";
+import AIChatAgent from "./components/AIChatAgent";
+import VoiceAssistant from "./components/VoiceAssistant";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,9 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        {/* AI Agents - Available on all pages */}
+        <AIChatAgent />
+        <VoiceAssistant />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
