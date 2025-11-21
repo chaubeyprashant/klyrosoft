@@ -6,7 +6,6 @@ export interface CareerForm {
   name: string;
   email: string;
   resume: File;
-  serviceOfInterest?: string;
 }
 
 const submitResume = async (formData: CareerForm) => {
@@ -26,7 +25,6 @@ const submitResume = async (formData: CareerForm) => {
     name,
     email,
     resume: downloadURL,
-    serviceOfInterest: formData.serviceOfInterest || "Not specified",
     submittedAt: new Date(),
   });
 };
