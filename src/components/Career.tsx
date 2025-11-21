@@ -37,7 +37,22 @@ const Career = () => {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      await careerService.submitResume(values);
+      // Ensure all required fields are present
+      if (!values.name || !values.email || !values.resume) {
+        toast({
+          title: "Validation Error",
+          description: "Please fill in all required fields.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      await careerService.submitResume({
+        name: values.name,
+        email: values.email,
+        resume: values.resume,
+      });
+      
       toast({
         title: "Resume Submitted",
         description: "Thank you for your interest in Klyrosoft!",
@@ -46,7 +61,7 @@ const Career = () => {
     } catch (error) {
       toast({
         title: "Error",
-        description: "There was an error submitting your resume. Please try again later.",
+        description: error instanceof Error ? error.message : "There was an error submitting your resume. Please try again later.",
         variant: "destructive",
       });
     }

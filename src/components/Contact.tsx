@@ -178,19 +178,29 @@ const Contact = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="service">Service of Interest</Label>
+                  <Label htmlFor="service">Service/Project of Interest</Label>
                   <Select value={formData.service} onValueChange={handleSelectChange}>
                     <SelectTrigger className="border-border focus:border-primary">
-                      <SelectValue placeholder="Select a service" />
+                      <SelectValue placeholder="Select a service or AI project" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="web">Web Development</SelectItem>
-                      <SelectItem value="mobile">Mobile Development</SelectItem>
-                      <SelectItem value="saas">SaaS Development</SelectItem>
-                      <SelectItem value="branding">Branding & Design</SelectItem>
-                      <SelectItem value="social">Social Media</SelectItem>
-                      <SelectItem value="photography">Photography</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="ai-voice-assistant">🤖 AI Voice Assistant</SelectItem>
+                      <SelectItem value="ai-image-generation">🎨 AI Image Generation</SelectItem>
+                      <SelectItem value="ai-video-generation">🎬 AI Video Generation</SelectItem>
+                      <SelectItem value="ai-chatbot">💬 AI Chatbot</SelectItem>
+                      <SelectItem value="ai-workflow-automation">⚡ AI Workflow Automation</SelectItem>
+                      <SelectItem value="ai-content-generation">✍️ AI Content Generation</SelectItem>
+                      <SelectItem value="ai-data-analysis">📊 AI Data Analysis</SelectItem>
+                      <SelectItem value="ai-document-processing">📄 AI Document Processing</SelectItem>
+                      <SelectItem value="custom-ai-agent">🤖 Custom AI Agent</SelectItem>
+                      <SelectItem value="web-development">💻 Web Development</SelectItem>
+                      <SelectItem value="mobile-development">📱 Mobile App Development</SelectItem>
+                      <SelectItem value="backend-devops">⚙️ Backend & DevOps</SelectItem>
+                      <SelectItem value="saas-platforms">☁️ SaaS Platforms</SelectItem>
+                      <SelectItem value="digital-marketing">📈 Digital Marketing</SelectItem>
+                      <SelectItem value="branding-design">🎨 Branding & Design</SelectItem>
+                      <SelectItem value="photography">📸 Photography</SelectItem>
+                      <SelectItem value="other">🌐 Other / General Inquiry</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

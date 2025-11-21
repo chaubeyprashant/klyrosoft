@@ -1,63 +1,91 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Eye, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Eye, ArrowRight, Sparkles } from "lucide-react";
 
 const Portfolio = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Modern online shopping platform with advanced analytics and mobile-first design",
-      category: "IT Development",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      gradient: "from-blue-500 to-purple-600",
-      icon: "🛒",
-      results: "300% increase in conversions"
+      title: "AI Voice Assistant for Customer Service",
+      description: "Intelligent voice assistant that handles customer inquiries 24/7 using advanced NLP and speech recognition. Reduced support costs by 60% while improving response time.",
+      category: "AI Agents",
+      tags: ["NLP", "Speech Recognition", "Python", "OpenAI", "Voice AI"],
+      gradient: "from-blue-500 to-cyan-600",
+      icon: "🤖",
+      results: "60% cost reduction"
     },
     {
-      title: "Brand Identity Suite", 
-      description: "Complete brand overhaul including logo, guidelines, and marketing materials",
-      category: "Design",
-      tags: ["Branding", "UI/UX", "Print Design", "Web Design"],
+      title: "AI Image Generation Workflow", 
+      description: "Automated image generation system that creates marketing visuals, product images, and social media content on-demand. Processes 1000+ images daily.",
+      category: "AI Agents",
+      tags: ["Stable Diffusion", "DALL-E", "Python", "Image AI", "Automation"],
       gradient: "from-purple-500 to-pink-600",
       icon: "🎨",
-      results: "50% brand recognition boost"
+      results: "1000+ images/day"
     },
     {
-      title: "Digital Marketing Campaign",
-      description: "Multi-channel campaign resulting in 300% increase in qualified leads",
-      category: "Marketing",
-      tags: ["SEO", "PPC", "Social Media", "Analytics"],
-      gradient: "from-green-500 to-blue-600",
-      icon: "📈",
-      results: "300% lead increase"
+      title: "AI Video Content Creation System",
+      description: "Intelligent video generation agent that produces marketing videos from scripts and templates. Reduced video production time from days to minutes.",
+      category: "AI Agents",
+      tags: ["Video AI", "Text-to-Video", "FFmpeg", "Python", "Automation"],
+      gradient: "from-orange-500 to-red-600",
+      icon: "🎬",
+      results: "90% time reduction"
     },
     {
-      title: "SaaS Dashboard",
-      description: "Analytics dashboard for B2B software with real-time data visualization",
-      category: "IT Development", 
-      tags: ["Vue.js", "Python", "PostgreSQL", "D3.js"],
-      gradient: "from-indigo-500 to-cyan-600",
+      title: "AI Workflow Automation Platform",
+      description: "Enterprise-grade workflow automation system using AI agents to streamline business processes. Automates 500+ daily tasks across departments.",
+      category: "AI Workflows",
+      tags: ["Workflow AI", "Automation", "Python", "APIs", "Integration"],
+      gradient: "from-indigo-500 to-purple-600",
+      icon: "⚡",
+      results: "500+ tasks automated"
+    },
+    {
+      title: "AI-Powered E-Commerce Platform",
+      description: "Modern e-commerce platform with AI-powered recommendations, chatbots, and automated inventory management. Increased conversions by 300%.",
+      category: "AI Development",
+      tags: ["React", "AI Chatbot", "Recommendation Engine", "Node.js", "MongoDB"],
+      gradient: "from-green-500 to-emerald-600",
+      icon: "🛒",
+      results: "300% conversion boost"
+    },
+    {
+      title: "AI Content Generation Suite",
+      description: "Multi-agent system that generates blog posts, social media content, and marketing copy. Produces 200+ pieces of content weekly with human-like quality.",
+      category: "AI Agents",
+      tags: ["GPT-4", "Content AI", "NLP", "Python", "Content Strategy"],
+      gradient: "from-pink-500 to-rose-600",
+      icon: "✍️",
+      results: "200+ pieces/week"
+    },
+    {
+      title: "AI Data Analysis Dashboard",
+      description: "Intelligent analytics platform with AI-powered insights and predictive analytics. Provides real-time business intelligence and forecasting.",
+      category: "AI Development",
+      tags: ["Machine Learning", "Data Analytics", "Python", "React", "TensorFlow"],
+      gradient: "from-teal-500 to-cyan-600",
       icon: "📊",
-      results: "40% user engagement boost"
+      results: "40% better insights"
     },
     {
-      title: "Mobile App Design",
-      description: "User-centered design for fitness tracking app with 50K+ downloads",
-      category: "Design",
-      tags: ["Mobile UI", "Prototyping", "User Research", "Figma"],
-      gradient: "from-pink-500 to-red-600",
-      icon: "📱",
-      results: "50K+ downloads"
-    },
-    {
-      title: "Growth Marketing Strategy",
-      description: "Comprehensive growth strategy for startup achieving 500% user growth",
-      category: "Marketing",
-      tags: ["Growth Hacking", "A/B Testing", "Email", "Content"],
+      title: "AI Customer Support Automation",
+      description: "Multi-channel AI support system handling tickets, emails, and live chat. Resolves 80% of inquiries automatically with high satisfaction scores.",
+      category: "AI Workflows",
+      tags: ["Chatbot", "Email AI", "NLP", "Automation", "Customer Service"],
       gradient: "from-yellow-500 to-orange-600",
-      icon: "🚀",
-      results: "500% user growth"
+      icon: "💬",
+      results: "80% auto-resolution"
+    },
+    {
+      title: "AI Document Processing System",
+      description: "Intelligent document processing agent that extracts, categorizes, and processes documents. Handles 10,000+ documents monthly with 99% accuracy.",
+      category: "AI Agents",
+      tags: ["OCR", "Document AI", "Python", "Computer Vision", "Automation"],
+      gradient: "from-violet-500 to-purple-600",
+      icon: "📄",
+      results: "99% accuracy rate"
     }
   ];
 
@@ -68,24 +96,62 @@ const Portfolio = () => {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <section id="portfolio" className="py-20 bg-background" role="region" aria-labelledby="portfolio-heading">
       <div className="container mx-auto px-6">
-        <header className="text-center mb-16">
-          <h2 id="portfolio-heading" className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        <motion.header 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-primary">Our Work</span>
+          </div>
+          <h2 id="portfolio-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground">
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">Portfolio</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover how KlyroSoft has helped 500+ businesses achieve their digital transformation goals through innovative IT solutions, web development, mobile apps, and digital marketing strategies.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Discover how KlyroSoft has helped 500+ businesses achieve their digital transformation goals through innovative AI solutions, IT services, web development, mobile apps, and digital marketing strategies.
           </p>
-        </header>
+        </motion.header>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {projects.map((project, index) => (
-            <Card 
-              key={index}
-              className="group hover:shadow-hover transition-all duration-300 hover:-translate-y-2 bg-gradient-card border-0 overflow-hidden relative"
-            >
+            <motion.div key={index} variants={itemVariants}>
+              <Card 
+                className="group hover:shadow-hover transition-all duration-300 hover:-translate-y-2 bg-gradient-card border-0 overflow-hidden relative h-full"
+              >
               {/* Gradient Header */}
               <div className={`h-3 bg-gradient-to-r ${project.gradient} relative`}>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" />
@@ -151,19 +217,28 @@ const Portfolio = () => {
                 </Button> */}
               </CardContent>
             </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center">
-          <Button 
-            onClick={scrollToContact}
-            size="lg" 
-            className="bg-gradient-primary hover:shadow-elegant transition-all duration-300 text-lg px-8 py-4 group"
-          >
-            Start Your Project
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+        >
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button 
+              onClick={scrollToContact}
+              size="lg" 
+              className="bg-gradient-primary hover:shadow-elegant transition-all duration-300 text-lg px-8 py-4 group"
+            >
+              Start Your Project
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
