@@ -2,14 +2,19 @@ import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "./firebase";
 
-interface CareerForm {
+export interface CareerForm {
   name: string;
   email: string;
   resume: File;
+  serviceOfInterest?: string;
 }
 
 const submitResume = async (formData: CareerForm) => {
   const { name, email, resume } = formData;
+  
+  if (!name || !email || !resume) {
+    throw new Error("All fields are required: name, email, and resume");
+  }
 
   // Upload resume to Firebase Storage
   const storageRef = ref(storage, `resumes/${resume.name}`);
@@ -21,6 +26,7 @@ const submitResume = async (formData: CareerForm) => {
     name,
     email,
     resume: downloadURL,
+    serviceOfInterest: formData.serviceOfInterest || "Not specified",
     submittedAt: new Date(),
   });
 };

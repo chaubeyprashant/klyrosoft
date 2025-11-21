@@ -11,6 +11,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
 import { careerService } from "@/lib/careerService";
 
@@ -22,6 +23,7 @@ const formSchema = z.object({
     message: "Please enter a valid email address.",
   }),
   resume: z.instanceof(File),
+  serviceOfInterest: z.string().optional(),
 });
 
 const Career = () => {
@@ -32,12 +34,29 @@ const Career = () => {
       name: "",
       email: "",
       resume: undefined,
+      serviceOfInterest: "",
     },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      await careerService.submitResume(values);
+      // Ensure all required fields are present
+      if (!values.name || !values.email || !values.resume) {
+        toast({
+          title: "Validation Error",
+          description: "Please fill in all required fields.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      await careerService.submitResume({
+        name: values.name,
+        email: values.email,
+        resume: values.resume,
+        serviceOfInterest: values.serviceOfInterest,
+      });
+      
       toast({
         title: "Resume Submitted",
         description: "Thank you for your interest in Klyrosoft!",
@@ -46,7 +65,7 @@ const Career = () => {
     } catch (error) {
       toast({
         title: "Error",
-        description: "There was an error submitting your resume. Please try again later.",
+        description: error instanceof Error ? error.message : "There was an error submitting your resume. Please try again later.",
         variant: "destructive",
       });
     }
@@ -105,6 +124,40 @@ const Career = () => {
                         onChange={(e) => field.onChange(e.target.files?.[0])}
                       />
                     </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="serviceOfInterest"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Service/Project of Interest</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select a service or AI project you're interested in" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="ai-voice-assistant">🤖 AI Voice Assistant</SelectItem>
+                        <SelectItem value="ai-image-generation">🎨 AI Image Generation</SelectItem>
+                        <SelectItem value="ai-video-generation">🎬 AI Video Generation</SelectItem>
+                        <SelectItem value="ai-chatbot">💬 AI Chatbot</SelectItem>
+                        <SelectItem value="ai-workflow-automation">⚡ AI Workflow Automation</SelectItem>
+                        <SelectItem value="ai-content-generation">✍️ AI Content Generation</SelectItem>
+                        <SelectItem value="ai-data-analysis">📊 AI Data Analysis</SelectItem>
+                        <SelectItem value="ai-document-processing">📄 AI Document Processing</SelectItem>
+                        <SelectItem value="custom-ai-agent">🤖 Custom AI Agent</SelectItem>
+                        <SelectItem value="web-development">💻 Web Development</SelectItem>
+                        <SelectItem value="mobile-development">📱 Mobile App Development</SelectItem>
+                        <SelectItem value="backend-devops">⚙️ Backend & DevOps</SelectItem>
+                        <SelectItem value="saas-platforms">☁️ SaaS Platforms</SelectItem>
+                        <SelectItem value="digital-marketing">📈 Digital Marketing</SelectItem>
+                        <SelectItem value="general">🌐 General Interest</SelectItem>
+                      </SelectContent>
+                    </Select>
                     <FormMessage />
                   </FormItem>
                 )}
