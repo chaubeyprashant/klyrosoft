@@ -151,7 +151,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-muted/30" role="region" aria-labelledby="services-heading">
+    <section id="services" className="py-20 bg-background" role="region" aria-labelledby="services-heading">
       <div className="container mx-auto px-6">
         <motion.header 
           className="text-center mb-16"
@@ -167,7 +167,7 @@ const Services = () => {
           <h2 id="services-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground">
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Specializing in <strong>AI Workflow Automation</strong> as our MVP, we build intelligent AI agents and workflows that transform business operations. 
             Plus comprehensive IT solutions, web development, mobile apps, and digital marketing services.
           </p>
@@ -220,7 +220,7 @@ const Services = () => {
                         transition={{ type: "spring", stiffness: 300 }}
                       >
                         <div className="text-primary">{feature.icon}</div>
-                        <span className="text-muted-foreground">{feature.text}</span>
+                        <span className="text-foreground/70">{feature.text}</span>
                       </motion.div>
                     ))}
                   </div>

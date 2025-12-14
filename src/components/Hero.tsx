@@ -59,7 +59,7 @@ const Hero = () => {
         aria-label="Modern AI technology workspace"
         title="KlyroSoft AI Technology Workspace"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-secondary/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
       </div>
 
       {/* Animated Background Particles */}

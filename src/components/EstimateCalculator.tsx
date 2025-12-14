@@ -149,7 +149,7 @@ const EstimateCalculator = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Project Estimate Calculator
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-6">
             Get an instant estimate for your project. Tell us about your requirements and we'll provide you with a detailed cost and timeline estimate.
           </p>
           
@@ -164,7 +164,7 @@ const EstimateCalculator = () => {
               <Sparkles className="w-5 h-5 text-primary" />
               <h3 className="text-lg font-semibold text-foreground">Specializing in AI Solutions</h3>
             </div>
-            <p className="text-sm text-muted-foreground mb-4 max-w-2xl mx-auto">
+            <p className="text-sm text-foreground/80 mb-4 max-w-2xl mx-auto">
               We specialize in building AI agents and intelligent workflows. Check out our AI project examples below:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
@@ -181,7 +181,7 @@ const EstimateCalculator = () => {
                 >
                   <item.icon className="w-6 h-6 text-primary mx-auto mb-2" />
                   <h4 className="font-semibold text-sm mb-1">{item.title}</h4>
-                  <p className="text-xs text-muted-foreground">{item.desc}</p>
+                  <p className="text-xs text-foreground/70">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -200,7 +200,7 @@ const EstimateCalculator = () => {
               <Bot className="w-5 h-5 text-primary" />
               <h3 className="text-lg font-semibold">Recent AI Projects</h3>
             </div>
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-sm text-foreground/80 mb-4">
               Here are some examples of AI projects we've delivered:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -219,7 +219,7 @@ const EstimateCalculator = () => {
                   <span className="text-2xl">{project.icon}</span>
                   <div className="flex-1">
                     <h4 className="font-semibold text-sm">{project.title}</h4>
-                    <p className="text-xs text-muted-foreground">{project.result}</p>
+                    <p className="text-xs text-foreground/70">{project.result}</p>
                   </div>
                 </motion.div>
               ))}
@@ -297,7 +297,7 @@ const EstimateCalculator = () => {
                         <Label htmlFor={feature.id} className="font-medium cursor-pointer">
                           {feature.name}
                         </Label>
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-sm text-foreground/70 mt-1">
                           {feature.description}
                         </p>
                         <Badge variant="outline" className="mt-2">
@@ -388,19 +388,19 @@ const EstimateCalculator = () => {
                   <div className="text-center p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg">
                     <Clock className="w-8 h-8 text-primary mx-auto mb-2" />
                     <div className="text-2xl font-bold text-primary">{estimate.hours}</div>
-                    <div className="text-sm text-muted-foreground">Estimated Hours</div>
+                    <div className="text-sm text-foreground/70">Estimated Hours</div>
                   </div>
                   <div className="text-center p-6 bg-gradient-to-br from-green-500/5 to-green-500/10 rounded-lg">
                     <DollarSign className="w-8 h-8 text-green-600 mx-auto mb-2" />
                     <div className="text-2xl font-bold text-green-600">
                       ${estimate.cost.toLocaleString()}
                     </div>
-                    <div className="text-sm text-muted-foreground">Estimated Cost</div>
+                    <div className="text-sm text-foreground/70">Estimated Cost</div>
                   </div>
                   <div className="text-center p-6 bg-gradient-to-br from-blue-500/5 to-blue-500/10 rounded-lg">
                     <AlertCircle className="w-8 h-8 text-blue-600 mx-auto mb-2" />
                     <div className="text-2xl font-bold text-blue-600">{estimate.timeline}</div>
-                    <div className="text-sm text-muted-foreground">Timeline</div>
+                    <div className="text-sm text-foreground/70">Timeline</div>
                   </div>
                 </div>
 
@@ -409,7 +409,7 @@ const EstimateCalculator = () => {
                     <strong className="text-green-700">🎉 New Client Special:</strong> This estimate includes our competitive new client pricing! 
                     We've reduced our rates to help you get started with quality development at an affordable cost.
                   </p>
-                  <p className="text-xs text-muted-foreground mt-2">
+                  <p className="text-xs text-foreground/70 mt-2">
                     <strong>Note:</strong> Final quote may vary based on specific requirements discussed during consultation.
                   </p>
                 </div>
@@ -447,7 +447,7 @@ const EstimateCalculator = () => {
                     <div className="space-y-6">
                       <div className="text-center">
                         <h3 className="text-lg font-semibold mb-2">Get Your Detailed Proposal</h3>
-                        <p className="text-muted-foreground">
+                        <p className="text-foreground/80">
                           Provide your contact information to receive a detailed proposal and schedule a free consultation.
                         </p>
                       </div>

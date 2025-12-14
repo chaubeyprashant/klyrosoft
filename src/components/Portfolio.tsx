@@ -135,7 +135,7 @@ const Portfolio = () => {
           <h2 id="portfolio-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground">
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">Portfolio</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Discover how KlyroSoft has helped 500+ businesses achieve their digital transformation goals through innovative AI solutions, IT services, web development, mobile apps, and digital marketing strategies.
           </p>
         </motion.header>

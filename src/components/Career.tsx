@@ -74,7 +74,7 @@ const Career = () => {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Join Our Team
           </h2>
-          <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          <p className="text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             We are always looking for talented individuals to join our team. If you are passionate about technology and want to make a difference, we would love to hear from you.
           </p>
         </div>

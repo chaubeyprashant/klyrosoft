@@ -125,7 +125,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Let's Build Something <span className="bg-gradient-primary bg-clip-text text-transparent">Great Together</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
             Ready to transform your business? Let's discuss how we can help you achieve your goals.
           </p>
         </div>
@@ -256,7 +256,7 @@ const Contact = () => {
                     </div>
                     <h4 className="font-semibold mb-2 text-foreground">{info.title}</h4>
                     {info.details.map((detail, detailIndex) => (
-                      <p key={detailIndex} className="text-sm text-muted-foreground">
+                      <p key={detailIndex} className="text-sm text-foreground/70">
                         {detail}
                       </p>
                     ))}
@@ -265,10 +265,10 @@ const Contact = () => {
               ))}
             </div>
 
-            <Card className="bg-muted/50 border-border">
+            <Card className="bg-background/50 border-border">
               <CardContent className="p-6">
                 <h4 className="font-semibold mb-2 text-foreground">Quick Response Guarantee</h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-foreground/70">
                   We respond to all inquiries within 24 hours during business days. 
                   For urgent matters, please call us directly.
                 </p>
