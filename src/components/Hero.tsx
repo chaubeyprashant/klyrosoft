@@ -50,7 +50,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" role="banner" aria-label="Hero section">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" role="banner" aria-label="Hero section" itemScope itemType="https://schema.org/WebPageElement">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -107,6 +107,7 @@ const Hero = () => {
           <motion.h1 
             variants={itemVariants}
             className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
+            itemProp="headline"
           >
             Build Intelligent{" "}
             <span className="bg-gradient-to-r from-white via-secondary to-white bg-clip-text text-transparent bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite]">
