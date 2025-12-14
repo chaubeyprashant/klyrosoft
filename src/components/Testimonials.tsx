@@ -51,7 +51,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-muted">
+    <section id="testimonials" className="py-20 bg-background">
       <div className="container px-4 md:px-6">
         <motion.div 
           className="mx-auto max-w-3xl space-y-6 text-center mb-16"
@@ -67,7 +67,7 @@ const Testimonials = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             What Our <span className="bg-gradient-primary bg-clip-text text-transparent">Clients Say</span>
           </h2>
-          <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          <p className="text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             We are proud to have worked with some of the most innovative companies in the world, helping them transform with AI solutions.
           </p>
         </motion.div>
@@ -93,11 +93,11 @@ const Testimonials = () => {
                   </motion.div>
                   <div>
                     <CardTitle>{testimonial.name}</CardTitle>
-                    <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                    <p className="text-sm text-foreground/70">{testimonial.title}</p>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">{testimonial.testimonial}</p>
+                  <p className="text-foreground/80 leading-relaxed">{testimonial.testimonial}</p>
                 </CardContent>
               </Card>
             </motion.div>

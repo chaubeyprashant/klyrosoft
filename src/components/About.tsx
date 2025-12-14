@@ -59,7 +59,7 @@ const About = () => {
                 About <span className="bg-gradient-primary bg-clip-text text-transparent">Us</span>
               </h2>
             </motion.div>
-            <motion.p variants={itemVariants} className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <motion.p variants={itemVariants} className="text-lg text-foreground/80 mb-8 leading-relaxed">
               KlyroSoft is a leading AI solutions agency specializing in <strong>AI agents and intelligent workflows</strong>. 
               We build custom AI agents—from voice assistants to image and video generation systems—that automate business processes 
               and transform operations. Our team of expert AI engineers, developers, and creative professionals delivers end-to-end 
@@ -72,7 +72,7 @@ const About = () => {
                   <Bot className="w-6 h-6 text-primary" />
                   <h3 className="text-xl font-semibold text-foreground">Our MVP: AI Workflow Automation</h3>
                 </div>
-                <p className="text-base text-muted-foreground leading-relaxed">
+                <p className="text-base text-foreground/80 leading-relaxed">
                   We specialize in creating intelligent AI workflows that automate complex business processes. 
                   Our AI agents handle everything from customer interactions to content generation, making your operations 
                   more efficient and scalable.
@@ -82,7 +82,7 @@ const About = () => {
             
             <motion.div variants={itemVariants} className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-foreground">Our Mission</h3>
-              <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-lg text-foreground/80 mb-4 leading-relaxed">
                 "To empower businesses with intelligent AI agents and automated workflows that drive growth and innovation."
               </p>
             </motion.div>
@@ -93,13 +93,13 @@ const About = () => {
                 {values.map((value, index) => (
                   <motion.div 
                     key={index} 
-                    className="flex items-start space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                    className="flex items-start space-x-3 p-3 rounded-lg hover:bg-background/50 transition-colors"
                     whileHover={{ scale: 1.02, x: 5 }}
                   >
                     <div className="text-primary mt-1">{value.icon}</div>
                     <div>
                       <h4 className="font-semibold text-foreground">{value.title}</h4>
-                      <p className="text-sm text-muted-foreground">{value.description}</p>
+                      <p className="text-sm text-foreground/70">{value.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -133,7 +133,7 @@ const About = () => {
                         {stat.icon}
                       </motion.div>
                       <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
-                      <div className="text-sm text-muted-foreground">{stat.label}</div>
+                      <div className="text-sm text-foreground/70">{stat.label}</div>
                     </CardContent>
                   </Card>
                 </motion.div>

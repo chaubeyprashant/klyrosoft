@@ -57,7 +57,7 @@ const Products = () => {
   };
 
   return (
-    <section id="products" className="py-20 bg-gradient-to-b from-background to-muted/30">
+    <section id="products" className="py-20 bg-background">
       <div className="container px-4 md:px-6">
         <motion.div 
           className="mx-auto max-w-3xl space-y-6 text-center mb-16"
@@ -73,7 +73,7 @@ const Products = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">AI Agents</span>
           </h2>
-          <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed max-w-2xl mx-auto">
+          <p className="text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed max-w-2xl mx-auto">
             Custom-built AI agents that automate workflows and enhance productivity. From voice assistants to creative content generation, we build intelligent solutions tailored to your needs.
           </p>
         </motion.div>
@@ -141,7 +141,7 @@ const Products = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          <p className="text-muted-foreground mb-4">
+          <p className="text-foreground/80 mb-4">
             Need a custom AI agent for your specific use case?
           </p>
           <motion.button
