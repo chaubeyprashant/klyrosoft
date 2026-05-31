@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import EstimatePage from "./pages/EstimatePage";
 import CareerPage from "./pages/CareerPage";
 import NotFound from "./pages/NotFound";
+import ResumeTailorPage from "./pages/ResumeTailorPage";
 import AIChatAgent from "./components/AIChatAgent";
 import VoiceAssistant from "./components/VoiceAssistant";
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/estimate" element={<EstimatePage />} />
           <Route path="/careers" element={<CareerPage />} />
+          <Route path="/resume-tailor" element={<ResumeTailorPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

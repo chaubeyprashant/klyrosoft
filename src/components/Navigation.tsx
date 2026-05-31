@@ -38,6 +38,11 @@ const Navigation = () => {
     setIsMenuOpen(false);
   };
 
+  const navigateToResumeTailor = () => {
+    navigate("/resume-tailor");
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-6 py-4">
@@ -80,6 +85,12 @@ const Navigation = () => {
               className="text-foreground hover:text-primary transition-colors"
             >
               Contact
+            </button>
+            <button
+              onClick={navigateToResumeTailor}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Resume Tailor
             </button>
             <button
               onClick={navigateToCareers}
@@ -136,6 +147,12 @@ const Navigation = () => {
               className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
             >
               Contact
+            </button>
+            <button
+              onClick={navigateToResumeTailor}
+              className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+            >
+              Resume Tailor
             </button>
             <button
               onClick={navigateToCareers}
