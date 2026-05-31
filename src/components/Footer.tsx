@@ -1,4 +1,4 @@
-import { Code, Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
+import { Code, Mail, MapPin, Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -85,10 +85,6 @@ const Footer = () => {
               <li className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-primary-foreground/60" />
                 <span className="text-primary-foreground/80 text-sm">klyrosoft1@gmail.com</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-primary-foreground/60" />
-                <span className="text-primary-foreground/80 text-sm">+91-7869861631</span>
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-primary-foreground/60" />

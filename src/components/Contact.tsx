@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Clock, Loader2 } from "lucide-react";
-import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -19,19 +18,18 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "idle" | "success" | "error";
+    message: string;
+  }>({
+    type: "idle",
+    message: "",
+  });
 
-  // Validate environment variables
-  const validateEmailJSConfig = () => {
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey) {
-      console.error('Missing EmailJS environment variables:', {
-        serviceId: serviceId ? 'Set' : 'Missing',
-        templateId: templateId ? 'Set' : 'Missing',
-        publicKey: publicKey ? 'Set' : 'Missing'
-      });
+  const validateWeb3FormsConfig = () => {
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      console.error("Missing Web3Forms environment variable: VITE_WEB3FORMS_ACCESS_KEY");
       return false;
     }
     return true;
@@ -40,41 +38,58 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus({ type: "idle", message: "" });
+
+    if (!validateWeb3FormsConfig()) {
+      const message = "Web3Forms access key is missing. Please set VITE_WEB3FORMS_ACCESS_KEY.";
+      toast({
+        title: "Email service unavailable",
+        description: message,
+        variant: "destructive",
+      });
+      setSubmitStatus({ type: "error", message });
+      setIsSubmitting(false);
+      return;
+    }
   
     try {
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone || "Not provided",
-          service: formData.service || "Not specified",
-          message: formData.message,
-          timestamp: new Date().toLocaleString('en-US', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-          })
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
-      );
+      const web3FormData = new FormData();
+      web3FormData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+      web3FormData.append("name", formData.name);
+      web3FormData.append("email", formData.email);
+      web3FormData.append("phone", formData.phone || "Not provided");
+      web3FormData.append("service", formData.service || "Not specified");
+      web3FormData.append("message", formData.message);
+      web3FormData.append("subject", `New Contact Form Submission - ${formData.service || "General Inquiry"}`);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: web3FormData,
+      });
+
+      const result: { success?: boolean; message?: string } = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Failed to submit form via Web3Forms.");
+      }
   
       toast({
         title: "Message Sent!",
         description: "Thank you for your interest. We'll get back to you within 24 hours.",
       });
+      setSubmitStatus({
+        type: "success",
+        message: "Message sent successfully. We'll get back to you within 24 hours.",
+      });
   
       setFormData({ name: "", email: "", phone: "", service: "", message: "" });
     } catch (error) {
+      const message = error instanceof Error ? error.message : "Failed to send message. Please try again.";
       toast({
         title: "Error",
-        description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
+        description: message,
         variant: "destructive",
       });
+      setSubmitStatus({ type: "error", message });
     } finally {
       setIsSubmitting(false);
     }
@@ -231,6 +246,15 @@ const Contact = () => {
                     "Get Started"
                   )}
                 </Button>
+                {isSubmitting && (
+                  <p className="text-sm text-foreground/70 text-center mt-2">Sending...</p>
+                )}
+                {!isSubmitting && submitStatus.type === "success" && (
+                  <p className="text-sm text-green-500 text-center mt-2">{submitStatus.message}</p>
+                )}
+                {!isSubmitting && submitStatus.type === "error" && (
+                  <p className="text-sm text-red-500 text-center mt-2">{submitStatus.message}</p>
+                )}
               </form>
             </CardContent>
           </Card>
