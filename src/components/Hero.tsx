@@ -109,7 +109,7 @@ const Hero = () => {
             className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
             itemProp="headline"
           >
-            Build Intelligent{" "}
+            <span className="block mb-2">KlyroSoft</span>
             <span className="bg-gradient-to-r from-white via-secondary to-white bg-clip-text text-transparent bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite]">
               AI Agents & Workflows
             </span>
@@ -119,8 +119,8 @@ const Hero = () => {
             variants={itemVariants}
             className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed"
           >
-            We specialize in creating custom AI agents and intelligent workflows that automate your business processes. 
-            From voice assistants to image & video generation, we build AI solutions that transform how you work.
+            KlyroSoft builds custom AI agents and intelligent workflows that automate your business processes.
+            From voice assistants to image & video generation, we deliver AI solutions that transform how you work.
           </motion.p>
 
           <motion.div 

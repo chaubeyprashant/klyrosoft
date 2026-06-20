@@ -10,8 +10,8 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = "KlyroSoft - AI Agents, Workflow Automation & IT Solutions | Expert AI Development",
-  description = "KlyroSoft specializes in AI agents, AI workflow automation, voice assistants, image & video generation. Expert IT services, web development, mobile apps, and digital solutions. 500+ satisfied clients, 150+ projects completed.",
+  title = "KlyroSoft | Official Website — AI Agents, Workflow Automation & IT Solutions",
+  description = "KlyroSoft is an AI solutions agency specializing in AI agents, workflow automation, voice assistants, and web & mobile development. Visit the official KlyroSoft website.",
   keywords = "KlyroSoft, Klyrosoft, AI agents, AI workflow automation, AI voice assistant, AI image generation, AI video generation, AI chatbot, custom AI agents, intelligent workflows, IT services, web development, mobile app development",
   image = "https://klyrosoft.com/klyrosoft.png",
   url = "https://klyrosoft.com",
