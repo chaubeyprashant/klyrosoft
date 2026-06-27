@@ -184,7 +184,7 @@ const AIChatAgent = () => {
       lowerMessage.includes("address")
     ) {
       addMessage(
-        "You can reach us through multiple channels:\n\n📧 **Email:** klyrosoft1@gmail.com\n📱 **Phone:** Available upon request\n🌐 **Website:** www.klyrosoft.com\n💬 **Chat:** I'm here 24/7 to help!\n🎤 **Voice:** Use our voice assistant for hands-free assistance\n\n📍 **Location:**\nServing clients globally across 25+ countries\n\n⏰ **Response Time:**\nWe typically respond within 24 hours. For urgent matters, book an appointment and we'll prioritize your request.\n\nWould you like to book an appointment to discuss your project?",
+        "You can reach us through multiple channels:\n\n📧 **Email:** klyrosoft1@gmail.com\n📱 **Phone:** Available upon request\n🌐 **Website:** klyrosoft.com\n💬 **Chat:** I'm here 24/7 to help!\n🎤 **Voice:** Use our voice assistant for hands-free assistance\n\n📍 **Location:**\nServing clients globally across 25+ countries\n\n⏰ **Response Time:**\nWe typically respond within 24 hours. For urgent matters, book an appointment and we'll prioritize your request.\n\nWould you like to book an appointment to discuss your project?",
         "bot"
       );
       return;
