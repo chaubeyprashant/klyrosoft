@@ -9,21 +9,21 @@ const testimonials = [
     title: "Founder & CEO, NovaTech Labs",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     testimonial:
-      "Klyrosoft has been a reliable partner in our app journey. Their team understood our requirements perfectly and delivered a flawless cross-platform experience.",
+      "KlyroSoft has been a reliable partner in our app journey. Their team understood our requirements perfectly and delivered a flawless cross-platform experience.",
   },
   {
     name: "Priya Kapoor",
     title: "CTO, InnoWave Systems",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg",
     testimonial:
-      "The professionalism and technical depth of Klyrosoft’s team are exceptional. They helped us scale our mobile product efficiently while maintaining top-notch quality.",
+      "The professionalism and technical depth of KlyroSoft’s team are exceptional. They helped us scale our mobile product efficiently while maintaining top-notch quality.",
   },
   {
     name: "Michael Torres",
     title: "Product Manager, BrightPath Solutions",
     avatar: "https://randomuser.me/api/portraits/men/75.jpg",
     testimonial:
-      "Working with Klyrosoft was a great experience. The communication, code quality, and project management exceeded our expectations from day one.",
+      "Working with KlyroSoft was a great experience. The communication, code quality, and project management exceeded our expectations from day one.",
   },
 ];
 

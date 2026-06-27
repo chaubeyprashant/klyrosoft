@@ -15,9 +15,9 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="KlyroSoft - AI Agents, Workflow Automation & IT Solutions"
-        description="KlyroSoft specializes in AI agents, AI workflow automation, voice assistants, image & video generation. Expert IT services, web development, mobile apps. 500+ satisfied clients, 150+ projects completed."
-        keywords="KlyroSoft, AI agents, AI workflow automation, AI voice assistant, AI image generation, AI video generation, custom AI agents, intelligent workflows, IT services, web development"
+        title="KlyroSoft | Official Website — AI Agents, Workflow Automation & IT Solutions"
+        description="Official KlyroSoft website at klyrosoft.com. AI agents, workflow automation, voice assistants, web & mobile development, and IT solutions for businesses worldwide."
+        keywords="KlyroSoft, Klyrosoft, klyrosoft, klyrosoft.com, KlyroSoft official website, KlyroSoft AI agency, AI agents, AI workflow automation, web development, mobile app development"
         url="https://klyrosoft.com/"
       />
       <div className="min-h-screen">

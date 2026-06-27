@@ -12,7 +12,7 @@ interface SEOProps {
 const SEO = ({
   title = "KlyroSoft | Official Website — AI Agents, Workflow Automation & IT Solutions",
   description = "KlyroSoft is an AI solutions agency specializing in AI agents, workflow automation, voice assistants, and web & mobile development. Visit the official KlyroSoft website.",
-  keywords = "KlyroSoft, Klyrosoft, AI agents, AI workflow automation, AI voice assistant, AI image generation, AI video generation, AI chatbot, custom AI agents, intelligent workflows, IT services, web development, mobile app development",
+  keywords = "KlyroSoft, Klyrosoft, klyrosoft, klyrosoft.com, KlyroSoft official website, KlyroSoft AI agency, AI agents, AI workflow automation, AI voice assistant, web development, mobile app development, IT solutions",
   image = "https://klyrosoft.com/klyrosoft.png",
   url = "https://klyrosoft.com",
   type = "website",
@@ -27,10 +27,12 @@ const SEO = ({
       <meta name="title" content={fullTitle} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
+      <meta name="application-name" content="KlyroSoft" />
       <link rel="canonical" href={fullUrl} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
+      <meta property="og:site_name" content="KlyroSoft" />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />

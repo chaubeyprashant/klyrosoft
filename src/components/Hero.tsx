@@ -100,7 +100,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
             >
               <Sparkles className="w-4 h-4 text-secondary" />
-              <span className="text-sm font-medium">AI-Powered Solutions Agency</span>
+              <span className="text-sm font-medium">KlyroSoft — Official AI Solutions Agency</span>
             </motion.div>
           </motion.div>
 

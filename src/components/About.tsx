@@ -56,13 +56,13 @@ const About = () => {
                 <span className="text-sm font-medium text-primary">About KlyroSoft</span>
               </div>
               <h2 id="about-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
-                About <span className="bg-gradient-primary bg-clip-text text-transparent">Us</span>
+                About <span className="bg-gradient-primary bg-clip-text text-transparent">KlyroSoft</span>
               </h2>
             </motion.div>
             <motion.p variants={itemVariants} className="text-lg text-foreground/80 mb-8 leading-relaxed">
-              KlyroSoft is a leading AI solutions agency specializing in <strong>AI agents and intelligent workflows</strong>. 
-              We build custom AI agents—from voice assistants to image and video generation systems—that automate business processes 
-              and transform operations. Our team of expert AI engineers, developers, and creative professionals delivers end-to-end 
+              <strong>KlyroSoft</strong> (klyrosoft.com) is a leading AI solutions agency specializing in <strong>AI agents and intelligent workflows</strong>. 
+              KlyroSoft builds custom AI agents—from voice assistants to image and video generation systems—that automate business processes 
+              and transform operations. Our team of expert AI engineers, developers, and creative professionals at KlyroSoft delivers end-to-end 
               digital solutions powered by cutting-edge artificial intelligence.
             </motion.p>
             

@@ -21,7 +21,10 @@ const Footer = () => {
               <span className="text-2xl font-bold">KlyroSoft</span>
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed max-w-md">
-              Your Partner in Digital Transformation
+              KlyroSoft — your partner in digital transformation. Official website:{" "}
+              <a href="https://klyrosoft.com" className="underline hover:text-white transition-colors">
+                klyrosoft.com
+              </a>
             </p>
             <div className="flex space-x-4">
               <a href="https://www.linkedin.com/company/klyrosoft/" className="text-primary-foreground/60 hover:text-white transition-colors">
