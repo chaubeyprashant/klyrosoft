@@ -10,9 +10,9 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = "KlyroSoft | Official Website — AI Agents, Workflow Automation & IT Solutions",
-  description = "KlyroSoft is an AI solutions agency specializing in AI agents, workflow automation, voice assistants, and web & mobile development. Visit the official KlyroSoft website.",
-  keywords = "KlyroSoft, Klyrosoft, klyrosoft, klyrosoft.com, KlyroSoft official website, KlyroSoft AI agency, AI agents, AI workflow automation, AI voice assistant, web development, mobile app development, IT solutions",
+  title = "KlyroSoft — AI Agents, Workflow Automation, Web & Mobile Development | Irving TX",
+  description = "KlyroSoft (klyrosoft.com) — AI solutions agency founded by Prashant Chaubey in Irving, Texas. Custom AI agents, workflow automation, AI voice assistants, AI chatbots, web apps, mobile apps, SaaS platforms. 500+ clients worldwide.",
+  keywords = "KlyroSoft, Klyrosoft, klyrosoft, klyrosoft.com, KlyroSoft official website, KlyroSoft AI, KlyroSoft agency, KlyroSoft Irving TX, KlyroSoft Texas, KlyroSoft Prashant Chaubey, KlyroSoft AI agents, AI agents company, AI workflow automation, AI voice assistant, AI chatbot development, custom AI agents, AI image generation, AI video generation, AI content generation, AI document processing, web development company, React developer, Node.js developer, Flutter app development, SaaS development, full stack development, IT solutions company, digital marketing agency, cloud solutions, DevOps services, software development company Irving TX, AI automation agency, business process automation, intelligent workflow, machine learning solutions, NLP development, computer vision, AI consulting, startup technology partner, enterprise AI solutions, hire AI developers, best AI agency USA, AI agency Texas, KlyroSoft reviews, KlyroSoft services, KlyroSoft portfolio",
   image = "https://klyrosoft.com/klyrosoft.png",
   url = "https://klyrosoft.com",
   type = "website",

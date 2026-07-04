@@ -1,4 +1,4 @@
-import { Code, Mail, MapPin, Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
+import { Code, Mail, MapPin, Linkedin, Twitter, Instagram, Youtube, ExternalLink } from "lucide-react";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -21,16 +21,20 @@ const Footer = () => {
               <span className="text-2xl font-bold">KlyroSoft</span>
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed max-w-md">
-              KlyroSoft — your partner in digital transformation. Official website:{" "}
+              KlyroSoft — AI solutions agency specializing in custom AI agents, workflow automation,
+              web & mobile development, and SaaS platforms. Founded by Prashant Chaubey in Irving, Texas.{" "}
               <a href="https://klyrosoft.com" className="underline hover:text-white transition-colors">
                 klyrosoft.com
               </a>
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.linkedin.com/company/klyrosoft/" className="text-primary-foreground/60 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/klyrosoft/" className="text-primary-foreground/60 hover:text-white transition-colors" title="KlyroSoft on LinkedIn" rel="noopener noreferrer" target="_blank">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-white transition-colors">
+              <a href="https://linkedin.com/in/prashant-chaubey-dev" className="text-primary-foreground/60 hover:text-white transition-colors" title="Prashant Chaubey — KlyroSoft Founder" rel="noopener noreferrer" target="_blank">
+                <ExternalLink className="w-5 h-5" />
+              </a>
+              <a href="https://www.freelancer.com/u/klyrosoft" className="text-primary-foreground/60 hover:text-white transition-colors" title="KlyroSoft on Freelancer" rel="noopener noreferrer" target="_blank">
                 <Twitter className="w-5 h-5" />
               </a>
               <a href="#" className="text-primary-foreground/60 hover:text-white transition-colors">
@@ -99,7 +103,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-primary-foreground/60 text-sm">
-            © 2025 KlyroSoft. All rights reserved.
+            © 2026 KlyroSoft. All rights reserved. | AI Agents & Workflow Automation Agency — Irving, TX
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-primary-foreground/60 hover:text-white text-sm transition-colors">
