@@ -239,11 +239,11 @@ const EstimateCalculator = () => {
             <CardContent className="space-y-6">
               {/* Project Type */}
               <div className="space-y-2">
-                <Label htmlFor="project-type">Project Type *</Label>
+                <Label id="project-type-label" htmlFor="project-type">Project Type *</Label>
                 <Select value={formData.projectType} onValueChange={(value) => 
                   setFormData(prev => ({ ...prev, projectType: value }))
                 }>
-                  <SelectTrigger>
+                  <SelectTrigger id="project-type" aria-labelledby="project-type-label" aria-label="Select your project type">
                     <SelectValue placeholder="Select your project type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -267,11 +267,11 @@ const EstimateCalculator = () => {
 
               {/* Complexity */}
               <div className="space-y-2">
-                <Label htmlFor="complexity">Project Complexity *</Label>
+                <Label id="complexity-label" htmlFor="complexity">Project Complexity *</Label>
                 <Select value={formData.complexity} onValueChange={(value) => 
                   setFormData(prev => ({ ...prev, complexity: value }))
                 }>
-                  <SelectTrigger>
+                  <SelectTrigger id="complexity" aria-labelledby="complexity-label" aria-label="Select complexity level">
                     <SelectValue placeholder="Select complexity level" />
                   </SelectTrigger>
                   <SelectContent>
@@ -311,11 +311,11 @@ const EstimateCalculator = () => {
 
               {/* Timeline Preference */}
               <div className="space-y-2">
-                <Label htmlFor="timeline">Preferred Timeline</Label>
+                <Label id="timeline-label" htmlFor="timeline">Preferred Timeline</Label>
                 <Select value={formData.timeline} onValueChange={(value) => 
                   setFormData(prev => ({ ...prev, timeline: value }))
                 }>
-                  <SelectTrigger>
+                  <SelectTrigger id="timeline" aria-labelledby="timeline-label" aria-label="Select preferred timeline">
                     <SelectValue placeholder="When do you need this completed?" />
                   </SelectTrigger>
                   <SelectContent>
@@ -330,11 +330,11 @@ const EstimateCalculator = () => {
 
               {/* Budget Range */}
               <div className="space-y-2">
-                <Label htmlFor="budget">Budget Range</Label>
+                <Label id="budget-label" htmlFor="budget">Budget Range</Label>
                 <Select value={formData.budget} onValueChange={(value) => 
                   setFormData(prev => ({ ...prev, budget: value }))
                 }>
-                  <SelectTrigger>
+                  <SelectTrigger id="budget" aria-labelledby="budget-label" aria-label="Select budget range">
                     <SelectValue placeholder="What's your budget range?" />
                   </SelectTrigger>
                   <SelectContent>

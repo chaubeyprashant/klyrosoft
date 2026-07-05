@@ -71,9 +71,13 @@ const Team = () => {
               <Card className="h-full hover:shadow-hover transition-all duration-300 hover:-translate-y-2 bg-gradient-card border-0">
                 <CardHeader className="flex flex-row items-center gap-4">
                   <motion.div whileHover={{ scale: 1.08, rotate: 2 }} transition={{ type: "spring", stiffness: 280 }}>
-                    <Avatar className="h-12 w-12">
-                      <AvatarImage src={member.avatar ?? ""} alt={`${member.name} avatar`} />
-                      <AvatarFallback>{member.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}</AvatarFallback>
+                    <Avatar className="h-12 w-12" aria-label={`${member.name} avatar`}>
+                      {member.avatar ? (
+                        <AvatarImage src={member.avatar} alt={`${member.name} avatar`} />
+                      ) : null}
+                      <AvatarFallback role="img" aria-label={`${member.name} avatar`}>
+                        {member.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
+                      </AvatarFallback>
                     </Avatar>
                   </motion.div>
                   <div className="min-w-0">

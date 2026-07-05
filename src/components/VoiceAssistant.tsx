@@ -524,12 +524,12 @@ const VoiceAssistant = () => {
                       </div>
                       {appointmentData.date && (
                         <div>
-                          <Label className="text-xs">Time</Label>
+                          <Label id="voice-time-label" className="text-xs" htmlFor="voice-time">Time</Label>
                           <Select
                             value={appointmentData.time || ""}
                             onValueChange={(value) => setAppointmentData({ ...appointmentData, time: value })}
                           >
-                            <SelectTrigger className="h-8 text-sm">
+                            <SelectTrigger id="voice-time" aria-labelledby="voice-time-label" aria-label="Select appointment time" className="h-8 text-sm">
                               <SelectValue placeholder="Select time" />
                             </SelectTrigger>
                             <SelectContent>

@@ -2,8 +2,7 @@ User-agent: *
 Allow: /
 Sitemap: https://klyrosoft.com/sitemap.xml
 
-# LLMs
-LLMs: https://klyrosoft.com/llms.txt
+# LLM context file: https://klyrosoft.com/llms.txt
 
 User-agent: Googlebot
 Allow: /

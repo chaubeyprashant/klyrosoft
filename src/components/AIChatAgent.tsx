@@ -391,12 +391,12 @@ const AIChatAgent = () => {
                         </div>
 
                         <div>
-                          <Label className="text-xs">Service</Label>
+                          <Label id="chat-service-label" className="text-xs" htmlFor="chat-service">Service</Label>
                           <Select
                             value={appointmentData.service || ""}
                             onValueChange={(value) => setAppointmentData({ ...appointmentData, service: value })}
                           >
-                            <SelectTrigger className="h-8 text-sm">
+                            <SelectTrigger id="chat-service" aria-labelledby="chat-service-label" aria-label="Select service" className="h-8 text-sm">
                               <SelectValue placeholder="Select service" />
                             </SelectTrigger>
                             <SelectContent>
@@ -424,12 +424,12 @@ const AIChatAgent = () => {
 
                         {appointmentData.date && (
                           <div>
-                            <Label className="text-xs">Time *</Label>
+                            <Label id="chat-time-label" className="text-xs" htmlFor="chat-time">Time *</Label>
                             <Select
                               value={appointmentData.time || ""}
                               onValueChange={(value) => setAppointmentData({ ...appointmentData, time: value })}
                             >
-                              <SelectTrigger className="h-8 text-sm">
+                              <SelectTrigger id="chat-time" aria-labelledby="chat-time-label" aria-label="Select appointment time" className="h-8 text-sm">
                                 <SelectValue placeholder="Select time" />
                               </SelectTrigger>
                               <SelectContent>

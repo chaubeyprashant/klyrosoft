@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, Linkedin, Sparkles, Quote, Rocket, Target } from "lucide-react";
@@ -56,9 +56,8 @@ const Founder = () => {
             <Card className="h-full bg-gradient-card border-0 shadow-card overflow-hidden">
               <CardHeader className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <motion.div whileHover={{ scale: 1.05, rotate: 2 }} transition={{ type: "spring", stiffness: 260 }}>
-                  <Avatar className="h-16 w-16">
-                    <AvatarImage src="" alt="Founder avatar" />
-                    <AvatarFallback>KS</AvatarFallback>
+                  <Avatar className="h-16 w-16" aria-label="KlyroSoft Founder avatar">
+                    <AvatarFallback role="img" aria-label="KlyroSoft Founder avatar">KS</AvatarFallback>
                   </Avatar>
                 </motion.div>
                 <div className="text-left">

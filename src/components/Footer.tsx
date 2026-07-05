@@ -28,15 +28,15 @@ const Footer = () => {
               </a>
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.linkedin.com/company/klyrosoft/" className="text-primary-foreground/60 hover:text-white transition-colors" aria-label="KlyroSoft on LinkedIn" rel="noopener noreferrer" target="_blank">
+              <a href="https://www.linkedin.com/company/klyrosoft/" className="text-primary-foreground/80 hover:text-white transition-colors" aria-label="KlyroSoft on LinkedIn" rel="noopener noreferrer" target="_blank">
                 <Linkedin className="w-5 h-5" aria-hidden="true" />
                 <span className="sr-only">KlyroSoft on LinkedIn</span>
               </a>
-              <a href="https://linkedin.com/in/prashant-chaubey-dev" className="text-primary-foreground/60 hover:text-white transition-colors" aria-label="Prashant Chaubey — KlyroSoft Founder on LinkedIn" rel="noopener noreferrer" target="_blank">
+              <a href="https://linkedin.com/in/prashant-chaubey-dev" className="text-primary-foreground/80 hover:text-white transition-colors" aria-label="Prashant Chaubey — KlyroSoft Founder on LinkedIn" rel="noopener noreferrer" target="_blank">
                 <ExternalLink className="w-5 h-5" aria-hidden="true" />
                 <span className="sr-only">Prashant Chaubey — KlyroSoft Founder on LinkedIn</span>
               </a>
-              <a href="https://www.freelancer.com/u/klyrosoft" className="text-primary-foreground/60 hover:text-white transition-colors" aria-label="KlyroSoft on Freelancer" rel="noopener noreferrer" target="_blank">
+              <a href="https://www.freelancer.com/u/klyrosoft" className="text-primary-foreground/80 hover:text-white transition-colors" aria-label="KlyroSoft on Freelancer" rel="noopener noreferrer" target="_blank">
                 <ExternalLink className="w-5 h-5" aria-hidden="true" />
                 <span className="sr-only">KlyroSoft on Freelancer</span>
               </a>
@@ -87,11 +87,11 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-3">
               <li className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-primary-foreground/60" />
+                <Mail className="w-4 h-4 text-primary-foreground/80" aria-hidden="true" />
                 <span className="text-primary-foreground/80 text-sm">klyrosoft1@gmail.com</span>
               </li>
               <li className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4 text-primary-foreground/60" />
+                <MapPin className="w-4 h-4 text-primary-foreground/80" aria-hidden="true" />
                 <span className="text-primary-foreground/80 text-sm">4795 Regent Blvd, Irving, TX 75063, USA</span>
               </li>
             </ul>
@@ -99,14 +99,14 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-primary-foreground/60 text-sm">
+          <p className="text-primary-foreground/80 text-sm">
             © 2026 KlyroSoft. All rights reserved. | AI Agents & Workflow Automation Agency — Irving, TX
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-primary-foreground/60 hover:text-white text-sm transition-colors">
+            <a href="#" className="text-primary-foreground/80 hover:text-white text-sm transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-primary-foreground/60 hover:text-white text-sm transition-colors">
+            <a href="#" className="text-primary-foreground/80 hover:text-white text-sm transition-colors">
               Terms of Service
             </a>
           </div>

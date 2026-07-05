@@ -193,9 +193,14 @@ const Contact = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="service">Service/Project of Interest</Label>
+                  <Label id="service-label" htmlFor="service">Service/Project of Interest</Label>
                   <Select value={formData.service} onValueChange={handleSelectChange}>
-                    <SelectTrigger className="border-border focus:border-primary">
+                    <SelectTrigger
+                      id="service"
+                      aria-labelledby="service-label"
+                      aria-label="Select a service or AI project"
+                      className="border-border focus:border-primary"
+                    >
                       <SelectValue placeholder="Select a service or AI project" />
                     </SelectTrigger>
                     <SelectContent>

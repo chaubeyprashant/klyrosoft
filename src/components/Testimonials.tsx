@@ -86,8 +86,8 @@ const Testimonials = () => {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <Avatar>
-                      <AvatarFallback className="bg-primary/20 text-primary font-semibold">
+                    <Avatar aria-label={`${testimonial.name} avatar`}>
+                      <AvatarFallback className="bg-primary/20 text-primary font-semibold" role="img" aria-label={`${testimonial.name} avatar`}>
                         {testimonial.initials}
                       </AvatarFallback>
                     </Avatar>
