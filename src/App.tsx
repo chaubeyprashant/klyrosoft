@@ -5,13 +5,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import EstimatePage from "./pages/EstimatePage";
-import CareerPage from "./pages/CareerPage";
-import NotFound from "./pages/NotFound";
-import ResumeTailorPage from "./pages/ResumeTailorPage";
+import DeferredWidgets from "./components/DeferredWidgets";
 
-const AIChatAgent = lazy(() => import("./components/AIChatAgent"));
-const VoiceAssistant = lazy(() => import("./components/VoiceAssistant"));
+const EstimatePage = lazy(() => import("./pages/EstimatePage"));
+const CareerPage = lazy(() => import("./pages/CareerPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const ResumeTailorPage = lazy(() => import("./pages/ResumeTailorPage"));
 
 const queryClient = new QueryClient();
 
@@ -21,18 +20,16 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/estimate" element={<EstimatePage />} />
-          <Route path="/careers" element={<CareerPage />} />
-          <Route path="/resume-tailor" element={<ResumeTailorPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
         <Suspense fallback={null}>
-          <AIChatAgent />
-          <VoiceAssistant />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/estimate" element={<EstimatePage />} />
+            <Route path="/careers" element={<CareerPage />} />
+            <Route path="/resume-tailor" element={<ResumeTailorPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </Suspense>
+        <DeferredWidgets />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -1,11 +1,11 @@
 import { lazy, Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import About from "@/components/About";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 
+const Services = lazy(() => import("@/components/Services"));
+const About = lazy(() => import("@/components/About"));
 const Founder = lazy(() => import("@/components/Founder"));
 const Team = lazy(() => import("@/components/Team"));
 const Portfolio = lazy(() => import("@/components/Portfolio"));
@@ -25,9 +25,9 @@ const Index = () => {
       <div className="min-h-screen">
         <Navigation />
         <Hero />
-        <Services />
-        <About />
         <Suspense fallback={null}>
+          <Services />
+          <About />
           <Founder />
           <Team />
           <Portfolio />
