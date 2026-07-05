@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,8 +9,9 @@ import EstimatePage from "./pages/EstimatePage";
 import CareerPage from "./pages/CareerPage";
 import NotFound from "./pages/NotFound";
 import ResumeTailorPage from "./pages/ResumeTailorPage";
-import AIChatAgent from "./components/AIChatAgent";
-import VoiceAssistant from "./components/VoiceAssistant";
+
+const AIChatAgent = lazy(() => import("./components/AIChatAgent"));
+const VoiceAssistant = lazy(() => import("./components/VoiceAssistant"));
 
 const queryClient = new QueryClient();
 
@@ -27,9 +29,10 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-        {/* AI Agents - Available on all pages */}
-        <AIChatAgent />
-        <VoiceAssistant />
+        <Suspense fallback={null}>
+          <AIChatAgent />
+          <VoiceAssistant />
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

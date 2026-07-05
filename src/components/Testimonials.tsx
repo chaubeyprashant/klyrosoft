@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
@@ -7,21 +7,21 @@ const testimonials = [
   {
     name: "Alex Martin",
     title: "Founder & CEO, NovaTech Labs",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    initials: "AM",
     testimonial:
       "KlyroSoft has been a reliable partner in our app journey. Their team understood our requirements perfectly and delivered a flawless cross-platform experience.",
   },
   {
     name: "Priya Kapoor",
     title: "CTO, InnoWave Systems",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    initials: "PK",
     testimonial:
       "The professionalism and technical depth of KlyroSoft’s team are exceptional. They helped us scale our mobile product efficiently while maintaining top-notch quality.",
   },
   {
     name: "Michael Torres",
     title: "Product Manager, BrightPath Solutions",
-    avatar: "https://randomuser.me/api/portraits/men/75.jpg",
+    initials: "MT",
     testimonial:
       "Working with KlyroSoft was a great experience. The communication, code quality, and project management exceeded our expectations from day one.",
   },
@@ -87,8 +87,9 @@ const Testimonials = () => {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <Avatar>
-                      <AvatarImage src={testimonial.avatar} />
-                      <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                      <AvatarFallback className="bg-primary/20 text-primary font-semibold">
+                        {testimonial.initials}
+                      </AvatarFallback>
                     </Avatar>
                   </motion.div>
                   <div>

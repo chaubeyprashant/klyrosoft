@@ -52,19 +52,18 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden" role="banner" aria-label="Hero section" itemScope itemType="https://schema.org/WebPageElement">
       {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-        role="img"
-        aria-label="Modern AI technology workspace"
-        title="KlyroSoft AI Technology Workspace"
-      >
+        <img
+          src={heroImage}
+          alt="KlyroSoft AI technology workspace"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
-      </div>
 
       {/* Animated Background Particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+        {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-white/20 rounded-full"

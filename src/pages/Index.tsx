@@ -1,15 +1,17 @@
+import { lazy, Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
-import Founder from "@/components/Founder";
-import Team from "@/components/Team";
-import Portfolio from "@/components/Portfolio";
-import Testimonials from "@/components/Testimonials";
-import Products from "@/components/Products";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+
+const Founder = lazy(() => import("@/components/Founder"));
+const Team = lazy(() => import("@/components/Team"));
+const Portfolio = lazy(() => import("@/components/Portfolio"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const Products = lazy(() => import("@/components/Products"));
+const Contact = lazy(() => import("@/components/Contact"));
 
 const Index = () => {
   return (
@@ -25,12 +27,14 @@ const Index = () => {
         <Hero />
         <Services />
         <About />
-        <Founder />
-        <Team />
-        <Portfolio />
-        <Testimonials />
-        <Products />
-        <Contact />
+        <Suspense fallback={null}>
+          <Founder />
+          <Team />
+          <Portfolio />
+          <Testimonials />
+          <Products />
+          <Contact />
+        </Suspense>
         <Footer />
       </div>
     </>
