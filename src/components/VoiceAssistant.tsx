@@ -364,8 +364,10 @@ const VoiceAssistant = () => {
             }}
             className="h-16 w-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 shadow-elegant hover:shadow-hover transition-all"
             size="lg"
+            aria-label="Open KlyroSoft voice assistant"
           >
-            <Mic className="w-8 h-8 text-white" />
+            <Mic className="w-8 h-8 text-white" aria-hidden="true" />
+            <span className="sr-only">Open voice assistant</span>
           </Button>
         </motion.div>
       )}
@@ -398,8 +400,10 @@ const VoiceAssistant = () => {
                       setCurrentStep("idle");
                     }}
                     className="h-8 w-8 p-0 hover:bg-white/20"
+                    aria-label="Close voice assistant"
                   >
-                    <X className="w-4 h-4" />
+                    <X className="w-4 h-4" aria-hidden="true" />
+                    <span className="sr-only">Close voice assistant</span>
                   </Button>
                 </div>
                 <Badge variant="secondary" className="mt-2 bg-white/20 text-white border-0">

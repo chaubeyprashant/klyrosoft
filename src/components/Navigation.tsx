@@ -114,14 +114,19 @@ const Navigation = () => {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 text-foreground"
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
+            type="button"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
+            <span className="sr-only">{isMenuOpen ? "Close menu" : "Open menu"}</span>
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
+          <div id="mobile-navigation" className="md:hidden mt-4 pb-4 space-y-4">
             <button
               onClick={() => scrollToSection("services")}
               className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"

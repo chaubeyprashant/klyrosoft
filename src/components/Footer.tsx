@@ -1,4 +1,4 @@
-import { Code, Mail, MapPin, Linkedin, Twitter, Instagram, Youtube, ExternalLink } from "lucide-react";
+import { Code, Mail, MapPin, Linkedin, ExternalLink } from "lucide-react";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -28,20 +28,17 @@ const Footer = () => {
               </a>
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.linkedin.com/company/klyrosoft/" className="text-primary-foreground/60 hover:text-white transition-colors" title="KlyroSoft on LinkedIn" rel="noopener noreferrer" target="_blank">
-                <Linkedin className="w-5 h-5" />
+              <a href="https://www.linkedin.com/company/klyrosoft/" className="text-primary-foreground/60 hover:text-white transition-colors" aria-label="KlyroSoft on LinkedIn" rel="noopener noreferrer" target="_blank">
+                <Linkedin className="w-5 h-5" aria-hidden="true" />
+                <span className="sr-only">KlyroSoft on LinkedIn</span>
               </a>
-              <a href="https://linkedin.com/in/prashant-chaubey-dev" className="text-primary-foreground/60 hover:text-white transition-colors" title="Prashant Chaubey — KlyroSoft Founder" rel="noopener noreferrer" target="_blank">
-                <ExternalLink className="w-5 h-5" />
+              <a href="https://linkedin.com/in/prashant-chaubey-dev" className="text-primary-foreground/60 hover:text-white transition-colors" aria-label="Prashant Chaubey — KlyroSoft Founder on LinkedIn" rel="noopener noreferrer" target="_blank">
+                <ExternalLink className="w-5 h-5" aria-hidden="true" />
+                <span className="sr-only">Prashant Chaubey — KlyroSoft Founder on LinkedIn</span>
               </a>
-              <a href="https://www.freelancer.com/u/klyrosoft" className="text-primary-foreground/60 hover:text-white transition-colors" title="KlyroSoft on Freelancer" rel="noopener noreferrer" target="_blank">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-white transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-white transition-colors">
-                <Youtube className="w-5 h-5" />
+              <a href="https://www.freelancer.com/u/klyrosoft" className="text-primary-foreground/60 hover:text-white transition-colors" aria-label="KlyroSoft on Freelancer" rel="noopener noreferrer" target="_blank">
+                <ExternalLink className="w-5 h-5" aria-hidden="true" />
+                <span className="sr-only">KlyroSoft on Freelancer</span>
               </a>
             </div>
           </div>

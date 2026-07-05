@@ -163,11 +163,13 @@ const Portfolio = () => {
                     {project.category}
                   </Badge>
                   <div className="flex space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <Button size="sm" variant="ghost" className="h-8 w-8 p-0 hover:bg-primary/10">
-                      <ExternalLink className="w-4 h-4" />
+                    <Button size="sm" variant="ghost" className="h-8 w-8 p-0 hover:bg-primary/10" aria-label={`View ${project.title} project`}>
+                      <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                      <span className="sr-only">View {project.title} project</span>
                     </Button>
-                    <Button size="sm" variant="ghost" className="h-8 w-8 p-0 hover:bg-primary/10">
-                      <Github className="w-4 h-4" />
+                    <Button size="sm" variant="ghost" className="h-8 w-8 p-0 hover:bg-primary/10" aria-label={`View ${project.title} source code`}>
+                      <Github className="w-4 h-4" aria-hidden="true" />
+                      <span className="sr-only">View {project.title} source code</span>
                     </Button>
                   </div>
                 </div>

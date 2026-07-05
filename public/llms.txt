@@ -1,0 +1,39 @@
+# KlyroSoft
+
+> KlyroSoft (klyrosoft.com) is an AI solutions agency founded by Prashant Chaubey in Irving, Texas. We build custom AI agents, workflow automation, AI voice assistants, web apps, mobile apps, and SaaS platforms for startups and enterprises worldwide.
+
+## Main Pages
+
+- [Home](https://klyrosoft.com/): Official KlyroSoft website — AI agents, workflow automation, portfolio, and contact
+- [Get Estimate](https://klyrosoft.com/estimate): Free project estimate for AI agents, web development, and mobile apps
+- [Careers](https://klyrosoft.com/careers): Join the KlyroSoft team — AI engineers, developers, and designers
+- [Resume Tailor](https://klyrosoft.com/resume-tailor): AI-powered resume tailoring tool by KlyroSoft
+
+## Services
+
+- [AI Workflow Automation](https://klyrosoft.com/#services): Intelligent AI agents that streamline business processes and reduce manual work
+- [AI Agent Development](https://klyrosoft.com/#services): Custom AI agents for customer service, data analysis, and task automation
+- [AI Voice Assistants](https://klyrosoft.com/#products): Voice-powered assistants with NLP and speech recognition
+- [Web Development](https://klyrosoft.com/#services): React, Next.js, responsive websites, e-commerce, and CMS solutions
+- [Mobile App Development](https://klyrosoft.com/#services): iOS, Android, Flutter, and React Native cross-platform apps
+- [Backend & DevOps](https://klyrosoft.com/#services): API development, AWS, GCP, Azure cloud hosting, CI/CD pipelines
+- [SaaS & Dashboards](https://klyrosoft.com/#services): Custom analytics dashboards and SaaS product development
+
+## Company
+
+- [About KlyroSoft](https://klyrosoft.com/#about): AI solutions agency with 500+ clients across 25+ countries
+- [Founder — Prashant Chaubey](https://klyrosoft.com/#founder): Founder & CEO of KlyroSoft
+- [Team](https://klyrosoft.com/#team): AI engineers, full-stack developers, UI/UX designers, DevOps engineers
+- [Portfolio](https://klyrosoft.com/#portfolio): AI voice assistants, image generation, video creation, workflow automation projects
+- [Contact](https://klyrosoft.com/#contact): Email klyrosoft1@gmail.com — Irving, TX office
+
+## External Profiles
+
+- [KlyroSoft on LinkedIn](https://www.linkedin.com/company/klyrosoft): Official company page
+- [Prashant Chaubey on LinkedIn](https://linkedin.com/in/prashant-chaubey-dev): Founder profile
+- [KlyroSoft on Freelancer](https://www.freelancer.com/u/klyrosoft): Freelancer profile
+
+## Optional
+
+- [Sitemap](https://klyrosoft.com/sitemap.xml): Full site map for crawlers
+- [Robots](https://klyrosoft.com/robots.txt): Crawler directives

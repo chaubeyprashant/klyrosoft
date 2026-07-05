@@ -264,8 +264,10 @@ const AIChatAgent = () => {
             onClick={() => setIsOpen(true)}
             className="h-16 w-16 rounded-full bg-gradient-primary shadow-elegant hover:shadow-hover transition-all"
             size="lg"
+            aria-label="Open KlyroSoft AI chat assistant"
           >
-            <Bot className="w-8 h-8 text-white" />
+            <Bot className="w-8 h-8 text-white" aria-hidden="true" />
+            <span className="sr-only">Open AI chat assistant</span>
           </Button>
         </motion.div>
       )}
@@ -296,8 +298,10 @@ const AIChatAgent = () => {
                       setAppointmentData({});
                     }}
                     className="h-8 w-8 p-0 hover:bg-white/20"
+                    aria-label="Close AI chat assistant"
                   >
-                    <X className="w-4 h-4" />
+                    <X className="w-4 h-4" aria-hidden="true" />
+                    <span className="sr-only">Close chat</span>
                   </Button>
                 </div>
                 <Badge variant="secondary" className="mt-2 bg-white/20 text-white border-0">
@@ -465,8 +469,9 @@ const AIChatAgent = () => {
                         placeholder="Type your message..."
                         className="flex-1"
                       />
-                      <Button onClick={handleSend} size="sm" className="bg-gradient-primary">
-                        <Send className="w-4 h-4" />
+                      <Button onClick={handleSend} size="sm" className="bg-gradient-primary" aria-label="Send message">
+                        <Send className="w-4 h-4" aria-hidden="true" />
+                        <span className="sr-only">Send message</span>
                       </Button>
                     </div>
                   </div>
