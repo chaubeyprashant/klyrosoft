@@ -11,7 +11,12 @@ const EstimatePage = lazy(() => import("./pages/EstimatePage"));
 const CareerPage = lazy(() => import("./pages/CareerPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ResumeTailorPage = lazy(() => import("./pages/ResumeTailorPage"));
-
+const ServiceDetails = lazy(() => import("./pages/ServiceDetails"));
+const BlogIndex = lazy(() => import("./pages/BlogIndex"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const PortfolioIndex = lazy(() => import("./pages/PortfolioIndex"));
+const CaseStudyDetails = lazy(() => import("./pages/CaseStudyDetails"));
+const LocationPage = lazy(() => import("./pages/LocationPage"));
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -26,6 +31,12 @@ const App = () => (
             <Route path="/estimate" element={<EstimatePage />} />
             <Route path="/careers" element={<CareerPage />} />
             <Route path="/resume-tailor" element={<ResumeTailorPage />} />
+            <Route path="/services/:slug" element={<ServiceDetails />} />
+            <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/portfolio" element={<PortfolioIndex />} />
+            <Route path="/case-studies/:slug" element={<CaseStudyDetails />} />
+            <Route path="/:locationSlug" element={<LocationPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

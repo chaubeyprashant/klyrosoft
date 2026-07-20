@@ -43,6 +43,16 @@ const Navigation = () => {
     setIsMenuOpen(false);
   };
 
+  const navigateToBlog = () => {
+    navigate("/blog");
+    setIsMenuOpen(false);
+  };
+
+  const navigateToPortfolio = () => {
+    navigate("/portfolio");
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-6 py-4">
@@ -73,7 +83,7 @@ const Navigation = () => {
               About
             </button>
             <button
-              onClick={() => scrollToSection("portfolio")}
+              onClick={navigateToPortfolio}
               className="text-foreground hover:text-primary transition-colors"
             >
               Portfolio
@@ -95,6 +105,12 @@ const Navigation = () => {
               className="text-foreground hover:text-primary transition-colors"
             >
               Resume Tailor
+            </button>
+            <button
+              onClick={navigateToBlog}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Blog
             </button>
             <button
               onClick={navigateToCareers}
@@ -140,7 +156,7 @@ const Navigation = () => {
               About
             </button>
             <button
-              onClick={() => scrollToSection("portfolio")}
+              onClick={navigateToPortfolio}
               className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
             >
               Portfolio
@@ -162,6 +178,12 @@ const Navigation = () => {
               className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
             >
               Resume Tailor
+            </button>
+            <button
+              onClick={navigateToBlog}
+              className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+            >
+              Blog
             </button>
             <button
               onClick={navigateToCareers}

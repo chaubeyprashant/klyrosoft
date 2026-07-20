@@ -1,4 +1,5 @@
 import { Code, Mail, MapPin, Linkedin, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -11,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
@@ -43,25 +44,49 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Top Services */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Top Services</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/services/ai-development-company" className="text-primary-foreground/80 hover:text-white transition-colors">
+                  AI Development
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/custom-ai-development-services" className="text-primary-foreground/80 hover:text-white transition-colors">
+                  Custom AI Solutions
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/enterprise-ai-development" className="text-primary-foreground/80 hover:text-white transition-colors">
+                  Enterprise AI
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
+                <Link to="/blog" className="text-primary-foreground/80 hover:text-white transition-colors">
+                  Blog & Insights
+                </Link>
+              </li>
+              <li>
                 <button
                   onClick={() => scrollToSection("services")}
                   className="text-primary-foreground/80 hover:text-white transition-colors"
                 >
-                  Services
+                  All Services
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection("portfolio")}
-                  className="text-primary-foreground/80 hover:text-white transition-colors"
-                >
+                <Link to="/portfolio" className="text-primary-foreground/80 hover:text-white transition-colors">
                   Portfolio
-                </button>
+                </Link>
               </li>
               <li>
                 <button
